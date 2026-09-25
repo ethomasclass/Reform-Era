@@ -6,6 +6,8 @@ import {useCurrentFrame} from 'remotion';
 import {CinemaCold, CinemaDix, CinemaGallons} from './test/Cinematic';
 import {CollageCold, CollageDix, CollageGallons} from './test/Collage';
 import {frames, type ClipName} from './test/data';
+import {JFonts} from './jh/Kit';
+import {JHCold, JHDix, JHMap, JHRevival} from './jh/Mockups';
 
 const SLATE = 75;
 
@@ -55,5 +57,9 @@ export const Root: React.FC = () => (
       <Composition key={s.id} id={s.id} width={W} height={H} fps={FPS} durationInFrames={frames(s.clip)}
         component={() => <FontGate><s.C /></FontGate>} />
     ))}
+    {[['JH-Cold', JHCold], ['JH-Map', JHMap], ['JH-Revival', JHRevival], ['JH-Dix', JHDix]].map(([id, C]) => {
+      const Comp = C as React.FC;
+      return <Composition key={id as string} id={id as string} width={W} height={H} fps={FPS} durationInFrames={30} component={() => <JFonts><Comp /></JFonts>} />;
+    })}
   </>
 );

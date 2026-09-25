@@ -1,0 +1,174 @@
+// Kit for the "field notebook" documentary look: black-and-white archival images with one subject
+// in colour, loose yellow outlines traced around subjects, torn yellow highlighter titles, grids,
+// halos, route lines and handwritten notes.
+import React, {useEffect, useState} from 'react';
+import {AbsoluteFill, continueRender, delayRender, Img, interpolate, random, staticFile, useCurrentFrame} from 'remotion';
+import '@fontsource/abril-fatface/latin-400.css';
+import '@fontsource/permanent-marker/latin-400.css';
+import '@fontsource/playfair-display/latin-900.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-800.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import {clamp} from '../lib/anim';
+
+export const Y = '#FFE11A'; // highlighter yellow
+export const ORANGE = '#F28C28';
+export const INK = '#111111';
+
+export const JF = {
+  display: '"Abril Fatface", serif',
+  heavy: '"Playfair Display", serif',
+  hand: '"Permanent Marker", cursive',
+  sans: '"Inter", sans-serif',
+  mono: '"IBM Plex Mono", monospace',
+};
+
+const FACES = ['400 20px "Abril Fatface"', '400 20px "Permanent Marker"', '900 20px "Playfair Display"', '600 20px Inter', '800 20px Inter', '400 20px "IBM Plex Mono"'];
+
+export const JFonts: React.FC<{children: React.ReactNode}> = ({children}) => {
+  const [h] = useState(() => delayRender('jh-fonts'));
+  useEffect(() => {
+    Promise.all(FACES.map((f) => document.fonts.load(f))).then(() => continueRender(h));
+  }, [h]);
+  return <>{children}</>;
+};
+
+export type MaskData = {size: [number, number]; shapes: Record<string, string[]>; boxes: Record<string, [number, number, number, number]>};
+
+/** A picture placed in frame: source pixel (sx, sy) -> screen (left + sx * scale, top + sy * scale). */
+export type Place = {left: number; top: number; scale: number};
+
+/** The picture in black and white, plus optional colour layers limited by masks. */
+export const Picture: React.FC<{src: string; place: Place; size: [number, number]; bw?: string; style?: React.CSSProperties}> = ({src, place, size, bw = 'grayscale(1) contrast(1.2) brightness(0.97)', style}) => (
+  <Img src={staticFile(src)} style={{position: 'absolute', left: place.left, top: place.top, width: size[0] * place.scale, height: size[1] * place.scale, filter: bw, ...style}} />
+);
+
+/** Colour the masked subject: a flat colour laid over the black-and-white picture in 'color' blend keeps the engraving's shading. */
+export const Tint: React.FC<{mask: string; place: Place; size: [number, number]; color?: string; strength?: number}> = ({mask, place, size, color = ORANGE, strength = 1}) => {
+  const m: React.CSSProperties = {
+    position: 'absolute', left: place.left, top: place.top, width: size[0] * place.scale, height: size[1] * place.scale,
+    WebkitMaskImage: `url(${staticFile(mask)})`, WebkitMaskSize: '100% 100%', maskImage: `url(${staticFile(mask)})`, maskSize: '100% 100%',
+  } as React.CSSProperties;
+  return (
+    <>
+      <div style={{...m, background: color, mixBlendMode: 'color', opacity: strength}} />
+      <div style={{...m, background: color, mixBlendMode: 'multiply', opacity: 0.3 * strength}} />
+      <div style={{...m, background: color, mixBlendMode: 'screen', opacity: 0.28 * strength}} />
+    </>
+  );
+};
+
+/** The original colours of the picture, revealed by a soft gradient (e.g. colour creeping in from the right). */
+export const ColourReveal: React.FC<{src: string; place: Place; size: [number, number]; from?: number; to?: number; filter?: string}> = ({src, place, size, from = 0.55, to = 0.85, filter}) => (
+  <Img src={staticFile(src)} style={{position: 'absolute', left: place.left, top: place.top, width: size[0] * place.scale, height: size[1] * place.scale, filter,
+    WebkitMaskImage: `linear-gradient(90deg, transparent ${from * 100}%, #000 ${to * 100}%)`, maskImage: `linear-gradient(90deg, transparent ${from * 100}%, #000 ${to * 100}%)`}} />
+);
+
+/** Yellow outlines traced around masked subjects, drawn on from `at` over `dur` frames. `part` < 1 leaves the loop open. */
+export const Traced: React.FC<{paths: string[]; place: Place; at?: number; dur?: number; part?: number; width?: number; color?: string; jitter?: number}> = ({
+  paths, place, at = 0, dur = 14, part = 1, width = 5, color = Y, jitter = 0,
+}) => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [at, at + dur], [0, 1], clamp) * part;
+  return (
+    <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible', pointerEvents: 'none'}} width={1920} height={1080}>
+      <g transform={`translate(${place.left + jitter} ${place.top}) scale(${place.scale})`}>
+        {paths.map((d, i) => (
+          <path key={i} d={d} fill="none" stroke={color} strokeWidth={width / place.scale} strokeLinejoin="round" strokeLinecap="round"
+            pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} />
+        ))}
+      </g>
+    </svg>
+  );
+};
+
+/** A loose hand-drawn ellipse (halo, circle-this). */
+export const Loop: React.FC<{cx: number; cy: number; rx: number; ry: number; at?: number; dur?: number; width?: number; color?: string; seed?: number; tilt?: number}> = ({
+  cx, cy, rx, ry, at = 0, dur = 12, width = 5, color = Y, seed = 1, tilt = 0,
+}) => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
+  const pts: string[] = [];
+  const n = 70;
+  for (let i = 0; i <= n + 6; i++) {
+    const a = (i / n) * Math.PI * 2 + 0.6;
+    const w = 1 + (random(`${seed}-${i}`) - 0.5) * 0.02 + (i / n) * 0.03;
+    pts.push(`${(cx + Math.cos(a) * rx * w).toFixed(1)},${(cy + Math.sin(a) * ry * w).toFixed(1)}`);
+  }
+  return (
+    <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1920} height={1080}>
+      <polyline points={pts.join(' ')} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round"
+        pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} transform={`rotate(${tilt} ${cx} ${cy})`} />
+    </svg>
+  );
+};
+
+/** Torn-edged highlighter box behind heavy serif type. `after` is extra text set in yellow outside the box. */
+export const Highlight: React.FC<{text: string; after?: string; x: number; y: number; size?: number; at?: number; seed?: number; rot?: number}> = ({
+  text, after, x, y, size = 96, at = 0, seed = 3, rot = 0,
+}) => {
+  const frame = useCurrentFrame();
+  const wipe = interpolate(frame, [at, at + 8], [0, 1], clamp);
+  const pts: string[] = [];
+  const steps = 40;
+  for (let i = 0; i <= steps; i++) pts.push(`${(i / steps) * 100}% ${random(`t${seed}${i}`) * 9}%`);
+  for (let i = steps; i >= 0; i--) pts.push(`${(i / steps) * 100}% ${100 - random(`b${seed}${i}`) * 9}%`);
+  return (
+    <div style={{position: 'absolute', left: x, top: y, display: 'flex', alignItems: 'center', gap: size * 0.28, transform: `rotate(${rot}deg)`}}>
+      <div style={{position: 'relative', padding: `${size * 0.1}px ${size * 0.22}px ${size * 0.06}px`}}>
+        <div style={{position: 'absolute', inset: 0, background: Y, clipPath: `polygon(${pts.join(',')})`, transformOrigin: 'left', transform: `scaleX(${wipe})`}} />
+        <div style={{position: 'relative', fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: INK, whiteSpace: 'nowrap', opacity: interpolate(frame, [at + 3, at + 7], [0, 1], clamp)}}>{text}</div>
+      </div>
+      {after && <div style={{fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: Y, whiteSpace: 'nowrap', textShadow: '0 3px 14px rgba(0,0,0,0.55)', opacity: interpolate(frame, [at + 6, at + 10], [0, 1], clamp)}}>{after}</div>}
+    </div>
+  );
+};
+
+/** Faint drafting grid over part of the frame, fading out at the edges of `box`. */
+export const Grid: React.FC<{x: number; y: number; w: number; h: number; cell?: number; opacity?: number}> = ({x, y, w, h, cell = 88, opacity = 0.5}) => (
+  <div style={{position: 'absolute', left: x, top: y, width: w, height: h, opacity,
+    backgroundImage: `linear-gradient(rgba(255,255,255,0.55) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(255,255,255,0.55) 1.5px, transparent 1.5px)`,
+    backgroundSize: `${cell}px ${cell}px`,
+    WebkitMaskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)', maskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)'}} />
+);
+
+export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string}> = ({text, x, y, size = 46, rot = -4, color = Y}) => (
+  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
+);
+
+/** A hand-drawn arrow from (x1,y1) to (x2,y2) with a slight bow. */
+export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number}> = ({x1, y1, x2, y2, bow = 40, color = Y, width = 5}) => {
+  const mx = (x1 + x2) / 2 - ((y2 - y1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
+  const my = (y1 + y2) / 2 + ((x2 - x1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
+  const ang = Math.atan2(y2 - my, x2 - mx);
+  const h = 26;
+  return (
+    <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1920} height={1080}>
+      <path d={`M${x1},${y1} Q${mx},${my} ${x2},${y2}`} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" />
+      <path d={`M${x2 - h * Math.cos(ang - 0.45)},${y2 - h * Math.sin(ang - 0.45)} L${x2},${y2} L${x2 - h * Math.cos(ang + 0.45)},${y2 - h * Math.sin(ang + 0.45)}`}
+        fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
+
+export const Tag: React.FC<{text: string; x?: number; y?: number}> = ({text, x = 44, y = 1030}) => (
+  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.mono, fontSize: 18, letterSpacing: 1, color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase',
+    textShadow: '0 1px 6px rgba(0,0,0,0.9)'}}>{text}</div>
+);
+
+/** Paper/film texture and a soft vignette over everything. */
+export const Finish: React.FC<{vignette?: number}> = ({vignette = 0.55}) => {
+  const frame = useCurrentFrame();
+  const seed = Math.floor(frame / 2) % 40;
+  return (
+    <>
+      <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,${vignette}) 100%)`}} />
+      <AbsoluteFill style={{opacity: 0.13, mixBlendMode: 'overlay'}}>
+        <svg width="100%" height="100%">
+          <filter id={`jg${seed}`}><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={seed} /><feColorMatrix type="saturate" values="0" /></filter>
+          <rect width="100%" height="100%" filter={`url(#jg${seed})`} />
+        </svg>
+      </AbsoluteFill>
+    </>
+  );
+};
