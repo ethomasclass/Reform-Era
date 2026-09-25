@@ -18,6 +18,7 @@ SFX = {
     "marker_tick": ("A single quick stroke of a felt-tip marker on paper, close up, soft and short, one swipe, no voice.", 0.5),
     "pencil_soft": ("A soft, short graphite pencil scribble on paper, close up and gentle, a quick two-stroke note.", 0.6),
     "pen_flick": ("A light ballpoint pen flick across paper, a tiny soft scratch, very short and quiet.", 0.5),
+    "knock": ("Two sharp, hollow knocks on an old wooden table in a quiet room, close up, eerie, then silence.", 1.0),
     "chalk_tap": ("A soft piece of chalk writing one quick short word on a chalkboard, gentle, close up.", 0.6),
 }
 

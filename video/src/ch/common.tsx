@@ -7,7 +7,7 @@ import {useGFrame, usePal} from '../jh/Kit';
 export const MAP = {w: 4986, h: 4608};
 
 /** The sound under every handwritten note (one place to change it) and its level. */
-export const WRITE = {src: 'sfx/quill.wav', volume: 0.25};
+export const WRITE = {src: 'sfx/marker_tick.wav', volume: 0.2};
 
 export const Sfx: React.FC<{at: number; src: string; volume?: number}> = ({at, src, volume = 0.5}) => (
   <Sequence from={Math.max(0, at)} durationInFrames={90} layout="none"><Audio src={staticFile(src)} volume={volume} /></Sequence>
@@ -59,5 +59,21 @@ export const Ember: React.FC<{x: number; y: number; at: number; size?: number; f
           boxShadow: `0 0 ${sz * 3}px ${sz}px ${pal.subject}`, opacity: Math.sin(t * Math.PI) * k}} />;
       })}
     </AbsoluteFill>
+  );
+};
+
+/** A photo on white card stock that pops onto the desk. */
+export const Card: React.FC<{src: string; x: number; y: number; w: number; h?: number; rot?: number; at: number; filter?: string; fit?: 'cover' | 'contain'}> = ({
+  src, x, y, w, h, rot = 0, at, filter = 'grayscale(1) contrast(1.2)', fit = 'cover',
+}) => {
+  const g = useGFrame();
+  if (g < at) return null;
+  const k = interpolate(g, [at, at + 5], [0, 1], {...clamp, easing: (t) => 1 - Math.pow(1 - t, 3) * (1 - 2.2 * t * (1 - t))});
+  return (
+    <div style={{position: 'absolute', left: x, top: y, width: w, transform: `scale(${0.6 + 0.4 * k}) rotate(${rot}deg)`, opacity: Math.min(1, k * 2)}}>
+      <div style={{background: '#f4efe6', padding: Math.max(8, w * 0.025), boxShadow: '0 18px 34px rgba(0,0,0,0.6)'}}>
+        <Img src={staticFile(src)} style={{width: '100%', height: h, objectFit: fit, display: 'block', filter}} />
+      </div>
+    </div>
   );
 };
