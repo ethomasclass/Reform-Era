@@ -106,5 +106,26 @@
     "date": "2026-07-08 12:30:54",
     "licence": "CC BY 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Lucretia_Mott_by_Joseph_Kyle.jpg"
+  },
+  "ch02/finney.jpg": {
+    "title": "File:Charles Grandison Finney.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "1850",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Charles_Grandison_Finney.jpg"
+  },
+  "ch02/puritans.jpg": {
+    "title": "File:Puritans going to church) - G.H. Boughton '84 LCCN2006678318.jpg",
+    "artist": "Appleton, Thomas Gold, 1812-1884, engraver; Boughton, George Henry, 1834-1905, artist",
+    "date": "1885",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Puritans_going_to_church)_-_G.H._Boughton_%2784_LCCN2006678318.jpg"
+  },
+  "ch02/finney_sig.png": {
+    "title": "File:Signature of Charles G. Finney.png",
+    "artist": "H. B. Hall and Sons",
+    "date": "1876",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Signature_of_Charles_G._Finney.png"
   }
 }

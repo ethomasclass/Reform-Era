@@ -29,6 +29,20 @@ SCENERY = {
                     "rough wooden planks by lantern light. The lining has been carefully unstitched along one seam, and a "
                     "thin stack of folded, printed pamphlet pages is half-hidden inside it; the printing on the pages is too "
                     "small and blurred to read. Needle and thread lie beside it. Deep shadows, warm lantern glow from the left.", "16:9"),
+    "revival_night": ("A Methodist camp meeting at night in a forest clearing in upstate New York in the late 1820s. Hundreds of "
+                      "ordinary people in 1820s clothing crowd around a raised wooden preaching stand lit by torches on tall "
+                      "wooden fire stands; rows of white canvas tents and wagons among tall trees behind; people kneeling, weeping, "
+                      "arms raised, a few fallen to the ground being helped by others. Firelight glowing orange against a deep "
+                      "blue night. Wide composition, preacher small in the left third; no recognisable faces.", "16:9"),
+    "anxious_bench": ("Inside a crowded plain wooden New England meeting house during a revival in the early 1830s. At the front, "
+                      "facing the congregation, a long wooden bench where five anxious men and women in 1830s clothing sit with "
+                      "heads bowed, some weeping, hands clasped; the packed congregation leans toward them, praying; a preacher in a "
+                      "black coat stands above them with one arm raised. Warm window light from the side. The bench and the people on "
+                      "it are the clear centre of the picture.", "16:9"),
+    "puritan_sermon": ("Interior of a plain Puritan meeting house in 17th-century New England: bare wooden walls and box pews, a "
+                       "stern minister in black robes and white bands preaching from a tall wooden pulpit with a sounding board, "
+                       "a solemn congregation in dark clothing, men on one side and women on the other, grey daylight through small "
+                       "windows. Austere and heavy.", "16:9"),
 }
 
 
