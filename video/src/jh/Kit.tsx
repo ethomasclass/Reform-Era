@@ -5,6 +5,14 @@ import React, {useEffect, useState} from 'react';
 import {AbsoluteFill, continueRender, delayRender, Img, interpolate, random, staticFile, useCurrentFrame} from 'remotion';
 import '@fontsource/abril-fatface/latin-400.css';
 import '@fontsource/permanent-marker/latin-400.css';
+import '@fontsource/caveat-brush/latin-400.css';
+import '@fontsource/gochi-hand/latin-400.css';
+import '@fontsource/kalam/latin-700.css';
+import '@fontsource/rock-salt/latin-400.css';
+import '@fontsource/shadows-into-light-two/latin-400.css';
+import '@fontsource/nanum-pen-script/latin-400.css';
+import '@fontsource/covered-by-your-grace/latin-400.css';
+import '@fontsource/sedgwick-ave/latin-400.css';
 import '@fontsource/playfair-display/latin-900.css';
 import '@fontsource/inter/latin-600.css';
 import '@fontsource/inter/latin-800.css';
@@ -52,7 +60,24 @@ export const JF = {
   mono: '"IBM Plex Mono", monospace',
 };
 
-const FACES = ['400 20px "Abril Fatface"', '400 20px "Permanent Marker"', '900 20px "Playfair Display"', '600 20px Inter', '800 20px Inter', '400 20px "IBM Plex Mono"'];
+const FACES = ['400 20px "Abril Fatface"', '400 20px "Permanent Marker"', '400 20px "Caveat Brush"', '400 20px "Gochi Hand"', '700 20px Kalam',
+  '400 20px "Rock Salt"', '400 20px "Shadows Into Light Two"', '400 20px "Nanum Pen Script"', '400 20px "Covered By Your Grace"', '400 20px "Sedgwick Ave"', '900 20px "Playfair Display"', '600 20px Inter', '800 20px Inter', '400 20px "IBM Plex Mono"'];
+
+/** Handwriting faces for notes; `scale` evens out their different sizes. */
+export type Hand = {name: string; family: string; scale: number; weight: number};
+export const HANDS: Record<string, Hand> = {
+  marker: {name: 'Permanent Marker', family: '"Permanent Marker", cursive', scale: 1, weight: 400},
+  caveat: {name: 'Caveat Brush', family: '"Caveat Brush", cursive', scale: 1.25, weight: 400},
+  gochi: {name: 'Gochi Hand', family: '"Gochi Hand", cursive', scale: 1.15, weight: 400},
+  kalam: {name: 'Kalam Bold', family: 'Kalam, cursive', scale: 1.1, weight: 700},
+  rocksalt: {name: 'Rock Salt', family: '"Rock Salt", cursive', scale: 0.8, weight: 400},
+  shadows: {name: 'Shadows Into Light Two', family: '"Shadows Into Light Two", cursive', scale: 1.2, weight: 400},
+  nanum: {name: 'Nanum Pen Script (locked)', family: '"Nanum Pen Script", cursive', scale: 1.55, weight: 400},
+  grace: {name: 'Covered By Your Grace', family: '"Covered By Your Grace", cursive', scale: 1.3, weight: 400},
+  sedgwick: {name: 'Sedgwick Ave', family: '"Sedgwick Ave", cursive', scale: 1.15, weight: 400},
+};
+export const HandCtx = React.createContext<Hand>(HANDS.nanum);
+export const useHand = () => React.useContext(HandCtx);
 
 export const JFonts: React.FC<{children: React.ReactNode}> = ({children}) => {
   const [h] = useState(() => delayRender('jh-fonts'));
@@ -169,10 +194,11 @@ export const Grid: React.FC<{x: number; y: number; w: number; h: number; cell?: 
 export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string; at?: number; dur?: number; out?: number}> = ({text, x, y, size = 46, rot = -4, color, at = -999, dur = 10, out = Infinity}) => {
   const frame = useGFrame();
   const accent = accentOf(usePal());
+  const hand = useHand();
   if (frame < at || frame >= out) return null;
   const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
   return (
-    <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? accent, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap',
+    <div style={{position: 'absolute', left: x, top: y, fontFamily: hand.family, fontWeight: hand.weight, fontSize: size * hand.scale, color: color ?? accent, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap',
       textShadow: '0 0 2px #111, 0 0 4px #111, 2px 2px 0 #111, -2px 2px 0 #111, 2px -2px 0 #111, -2px -2px 0 #111, 0 3px 12px rgba(0,0,0,0.7)', clipPath: `inset(-20% ${(1 - p) * 100}% -20% -5%)`}}>{text}</div>
   );
 };

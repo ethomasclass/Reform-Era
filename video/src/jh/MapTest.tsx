@@ -5,6 +5,7 @@ import {AbsoluteFill, Audio, Easing, Img, interpolate, random, Sequence, staticF
 import words from '../../public/audio/test_map.words.json';
 import {clamp} from '../lib/anim';
 import {makeTimeline, type Narration} from '../lib/timing';
+import {WRITE} from '../ch/common';
 import {Arrow, boxOf, Finish, Highlight, INK, JF, Loop, Note, PALETTES, PaletteCtx, StepCtx, Tag, useGFrame, usePal} from './Kit';
 
 const N = words as Narration;
@@ -219,10 +220,10 @@ export const MapScene: React.FC<{n?: Narration; withAudio?: boolean}> = ({n = N,
       <Sfx at={at('Savannah')} src="sfx/tick.wav" volume={0.5} />
       <Sfx at={at('Boston')} src="sfx/tick.wav" volume={0.5} />
       <Sfx at={at('sixty') - 4} src="sfx/whoosh.wav" volume={0.5} />
-      <Sfx at={at('copies')} src="sfx/quill.wav" volume={0.35} />
-      <Sfx at={at('guns') + 4} src="sfx/quill.wav" volume={0.3} />
-      <Sfx at={at('gunpowder') + 6} src="sfx/quill.wav" volume={0.3} />
-      <Sfx at={at('preacher') - 6} src="sfx/quill.wav" volume={0.3} />
+      <Sfx at={at('copies')} src={WRITE.src} volume={WRITE.volume} />
+      <Sfx at={at('guns') + 4} src={WRITE.src} volume={WRITE.volume} />
+      <Sfx at={at('gunpowder') + 6} src={WRITE.src} volume={WRITE.volume} />
+      <Sfx at={at('preacher') - 6} src={WRITE.src} volume={WRITE.volume} />
       <Sfx at={at('writing')} src="sfx/page_turn.wav" volume={0.45} />
       <Sfx at={at('new laws')} src="sfx/stamp.wav" volume={0.4} />
       <Sfx at={at('price')} src="sfx/stamp.wav" volume={0.4} />

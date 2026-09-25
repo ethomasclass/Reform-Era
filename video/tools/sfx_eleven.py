@@ -14,38 +14,11 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "public", "
 RAW = os.path.join(OUT, "raw")
 
 SFX = {
-    # cold open
-    "shot": ("Cinematic antique black-powder pistol gunshot outdoors: a huge deep boom followed by a long "
-             "rolling echo that reverberates across an open valley for several seconds. Film sound design, "
-             "heavy low end, no music, no voices.", 4.0),
-    "stamp": ("Loud close-up impact: a heavy rubber stamp slammed hard onto a wooden desk through paper. "
-              "One punchy thump, clearly audible, no reverb.", 0.8),
-    "whoosh": ("A thick sheet of old paper sliding fast across a wooden desk, a soft papery swoosh.", 1.0),
-    "tick": ("A single crisp tick of an antique pocket watch, close up.", 0.5),
-    "boom": ("Deep cinematic low drum and orchestral bass hit for a documentary title card, with a long "
-             "dark reverberant tail.", 4.0),
-    # scene 2
-    "crickets": ("Loud, clear, close-up field crickets chirping steadily, the classic comedic "
-                 "awkward-silence cricket sound effect.", 3.0),
-    "quill": ("A dip pen quill scratching quickly across parchment, writing one short word, close up.", 1.5),
-    "crowd_cheer": ("A small nineteenth-century crowd outdoors cheering and applauding politely, distant.", 3.0),
-    "page_turn": ("A single page of an old book turned quickly, crisp paper flip.", 0.8),
-    "gavel": ("A single wooden gavel strike on a sound block in a large hall.", 1.2),
-    # chapter 4
-    "smash": ("Several china plates and drinking glasses crashing and shattering on a wooden floor at a rowdy "
-              "party, loud and close.", 2.0),
-    "rowdy_crowd": ("A big rowdy crowd inside a house: cheering, laughing, boots stomping on wooden floors, "
-                    "no music, 1800s.", 5.0),
-    # Video 2: the toy theater
-    "sea_ambience": ("Calm open sea from the deck of a wooden sailing ship: gentle waves lapping the hull, soft "
-                     "wind, creaking timber and rigging, a distant gull. Steady and loopable, no music, no voices.", 12.0),
-    "broadside": ("A wooden warship firing a rolling broadside: several heavy black-powder cannons going off one "
-                  "after another, deep booms, splintering wood, long rumbling echo over water. No music, no voices.", 5.0),
-    "curtain": ("A heavy velvet theater curtain being drawn open on its rail: fabric swish and the rattle of "
-                "curtain rings sliding along a metal rod, close up.", 2.5),
-    "pulley": ("A painted wooden sign lowered on ropes from a theater fly loft: rope running through a wooden "
-               "pulley, a small creak and a soft wooden knock as it stops.", 1.5),
-    "toll": ("One deep, solemn ship's bell toll with a long ringing decay, very sparse.", 4.0),
+    # name: (prompt, seconds)
+    "marker_tick": ("A single quick stroke of a felt-tip marker on paper, close up, soft and short, one swipe, no voice.", 0.5),
+    "pencil_soft": ("A soft, short graphite pencil scribble on paper, close up and gentle, a quick two-stroke note.", 0.6),
+    "pen_flick": ("A light ballpoint pen flick across paper, a tiny soft scratch, very short and quiet.", 0.5),
+    "chalk_tap": ("A soft piece of chalk writing one quick short word on a chalkboard, gentle, close up.", 0.6),
 }
 
 

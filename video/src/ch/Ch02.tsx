@@ -6,8 +6,8 @@ import revival from '../../public/img/jh/masks/revival.json';
 import finney from '../../public/img/jh/masks/finney.json';
 import {clamp} from '../lib/anim';
 import {makeTimeline, type Narration} from '../lib/timing';
-import {Arrow, boxOf, ColourReveal, Finish, Highlight, INK, JF, Loop, MaskData, Note, PALETTES, PaletteCtx, Picture, Place, StepCtx, Tag, Tint, Traced, useGFrame, usePal} from '../jh/Kit';
-import {DarkPaper, Ember, MapView, mapToScreen, Sfx} from './common';
+import {useHand, Arrow, boxOf, ColourReveal, Finish, Highlight, INK, JF, Loop, MaskData, Note, PALETTES, PaletteCtx, Picture, Place, StepCtx, Tag, Tint, Traced, useGFrame, usePal} from '../jh/Kit';
+import {DarkPaper, Ember, MapView, mapToScreen, Sfx, WRITE} from './common';
 
 const N = words as Narration;
 const R = revival as unknown as MaskData;
@@ -318,6 +318,7 @@ const District: React.FC<{t: TL}> = ({t}) => {
   const dAt = t.at('Burned-Over');
   const d = 'M' + DISTRICT.map(([x, y]) => `${x},${y}`).join(' L') + ' Z';
   const waves = [t.at('revivals'), t.at('fire'), t.at('swept', 2)];
+  const hand = useHand();
   return (
     <AbsoluteFill style={{background: '#15130f'}}>
       <MapView cx={cx} cy={cy} s={s}>
@@ -340,7 +341,7 @@ const District: React.FC<{t: TL}> = ({t}) => {
         return (
           <React.Fragment key={name}>
             <div style={{position: 'absolute', left: x - 10, top: y - 10, width: 20, height: 20, borderRadius: '50%', background: pal.mark, border: `3px solid ${INK}`}} />
-            <div style={{position: 'absolute', left: x + 14, top: y - (i % 2 ? 44 : -8), fontFamily: JF.hand, fontSize: 34, color: pal.mark,
+            <div style={{position: 'absolute', left: x + 14, top: y - (i % 2 ? 44 : -8), fontFamily: hand.family, fontWeight: hand.weight, fontSize: 34 * hand.scale, color: pal.mark,
               textShadow: '0 0 2px #111, 0 0 4px #111, 2px 2px 0 #111, -2px -2px 0 #111'}}>{name}</div>
           </React.Fragment>
         );
@@ -422,7 +423,7 @@ const Body: React.FC = () => {
         <Sfx key={c} at={at(c)} src="sfx/stamp.wav" volume={0.28} />
       ))}
       {['Thousands', 'former', 'before', 'Nothing', 'Kind', 'choose', 'wrestling', 'nobody', 'you can fix', 'perfect yourself', 'perfect society', 'Remember'].map((c) => (
-        <Sfx key={c} at={at(c) - 2} src="sfx/quill.wav" volume={0.22} />
+        <Sfx key={c} at={at(c) - 2} src={WRITE.src} volume={WRITE.volume} />
       ))}
       <Sfx at={at('Finney flipped')} src="sfx/page_turn.wav" volume={0.5} />
     </AbsoluteFill>

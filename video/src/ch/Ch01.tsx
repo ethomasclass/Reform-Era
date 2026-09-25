@@ -6,12 +6,14 @@ import revival from '../../public/img/jh/masks/revival.json';
 import {clamp} from '../lib/anim';
 import {makeTimeline, type Narration} from '../lib/timing';
 import {MapScene} from '../jh/MapTest';
+import {ChannelIntro, INTRO_FRAMES} from './Intro';
+import {WRITE} from './common';
 import {boxOf, Finish, Highlight, INK, JF, MaskData, Note, PALETTES, PaletteCtx, Picture, Place, StepCtx, Tag, Tint, Traced, useGFrame, usePal} from '../jh/Kit';
 
 const N = words as Narration;
 const R = revival as unknown as MaskData;
 export const TITLE_FRAMES = 150;
-export const CH01_FRAMES = Math.ceil(N.duration * 30) + 20 + TITLE_FRAMES;
+export const CH01_FRAMES = Math.ceil(N.duration * 30) + 20 + INTRO_FRAMES + TITLE_FRAMES;
 
 const MAP = {w: 4986, h: 4608};
 const BOSTON = [3489, 1660];
@@ -226,7 +228,8 @@ const Body: React.FC = () => {
   else if (frame < cut.question) scene = <Wall t={t} />;
   else if (frame < cut.tent) scene = <Question t={t} />;
   else if (frame < end) scene = <Tent t={t} />;
-  else scene = <Sequence from={end} layout="none"><Title /></Sequence>;
+  else if (frame < end + INTRO_FRAMES) scene = <Sequence from={end} layout="none"><ChannelIntro /></Sequence>;
+  else scene = <Sequence from={end + INTRO_FRAMES} layout="none"><Title /></Sequence>;
   const at = t.at;
   return (
     <AbsoluteFill>
@@ -234,16 +237,15 @@ const Body: React.FC = () => {
       <Finish vignette={0.3} />
       <Audio src={staticFile('audio/ch01_cold_open.wav')} />
       <Audio src={staticFile('music/cold_open.mp3')} volume={(f) => interpolate(f, [0, 15, end - 30, end], [0, 0.17, 0.17, 0.06], clamp)} />
-      <Sequence from={end - 6} layout="none"><Audio src={staticFile('music/title_sting.mp3')} volume={(f) => interpolate(f, [0, 4, 110, 150], [0, 0.5, 0.5, 0], clamp)} /></Sequence>
       <Sfx at={cut.questions} src="sfx/whoosh.wav" volume={0.4} />
-      {['thing', 'Who wrote', 'scare'].map((c) => <Sfx key={c} at={at(c) - 2} src="sfx/quill.wav" volume={0.28} />)}
+      {['thing', 'Who wrote', 'scare'].map((c) => <Sfx key={c} at={at(c) - 2} src={WRITE.src} volume={WRITE.volume} />)}
       <Sfx at={at('get there')} src="sfx/stamp.wav" volume={0.3} />
       <Sfx at={cut.zoom} src="sfx/whoosh.wav" volume={0.5} />
       <Sfx at={at('caught a fever')} src="sfx/stamp.wav" volume={0.35} />
       {CAUSES.map(([, cue]) => <Sfx key={cue} at={at(cue)} src="sfx/tick.wav" volume={0.45} />)}
       <Sfx at={at('Why did', 2)} src="sfx/stamp.wav" volume={0.3} />
       <Sfx at={at('decide')} src="sfx/stamp.wav" volume={0.35} />
-      <Sfx at={end + 4} src="sfx/boom.wav" volume={0.4} />
+      <Sfx at={end + INTRO_FRAMES + 4} src="sfx/stamp.wav" volume={0.4} />
     </AbsoluteFill>
   );
 };
