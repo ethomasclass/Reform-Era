@@ -4,7 +4,7 @@ import {AbsoluteFill, Img, staticFile} from 'remotion';
 import revival from '../../public/img/jh/masks/revival.json';
 import wharf from '../../public/img/jh/masks/wharf.json';
 import dix from '../../public/img/jh/masks/dix.json';
-import {Arrow, ColourReveal, Finish, Grid, Highlight, INK, JF, Loop, MaskData, Note, Picture, Place, Tag, Tint, Traced, usePal} from './Kit';
+import {Arrow, ColourReveal, Finish, Grid, Highlight, INK, JF, Loop, MaskData, Note, Picture, Place, Tag, Tint, Traced, usePal, boxOf, accentOf} from './Kit';
 
 const R = revival as unknown as MaskData;
 const WH = wharf as unknown as MaskData;
@@ -43,7 +43,7 @@ export const JHCold: React.FC = () => {
       <Note text="just in from Boston" x={1080} y={330} rot={-5} />
       <Arrow x1={1100} y1={400} x2={1000} y2={520} bow={-30} />
       <Highlight text="DECEMBER 1829" x={1010} y={640} size={96} seed={5} />
-      <div style={{position: 'absolute', left: 1040, top: 770, fontFamily: JF.display, fontSize: 64, color: usePal().mark, textShadow: '0 3px 14px rgba(0,0,0,0.6)'}}>SAVANNAH, GEORGIA</div>
+      <div style={{position: 'absolute', left: 1040, top: 770, fontFamily: JF.display, fontSize: 64, color: boxOf(usePal()), textShadow: '0 3px 14px rgba(0,0,0,0.6)'}}>SAVANNAH, GEORGIA</div>
       <Tag text="Illustration · Savannah waterfront, 1829" />
       <Finish />
     </AbsoluteFill>
@@ -81,13 +81,13 @@ export const JHMap: React.FC = () => {
       </div>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(10,8,5,0.7) 100%)'}} />
       {[b, sv].map(([x, y], i) => (
-        <div key={i} style={{position: 'absolute', left: x - 13, top: y - 13, width: 26, height: 26, borderRadius: '50%', background: usePal().mark, border: `4px solid ${INK}`, boxShadow: '0 0 0 3px rgba(255,255,255,0.25)'}} />
+        <div key={i} style={{position: 'absolute', left: x - 13, top: y - 13, width: 26, height: 26, borderRadius: '50%', background: accentOf(usePal()), border: `4px solid ${INK}`, boxShadow: '0 0 0 3px rgba(255,255,255,0.25)'}} />
       ))}
       <Highlight text="BOSTON" x={b[0] + 34} y={b[1] - 58} size={62} seed={7} />
       <Highlight text="SAVANNAH" x={sv[0] - 120} y={sv[1] + 34} size={62} seed={9} />
       <div style={{position: 'absolute', left: 90, top: 215, width: 330, transform: 'rotate(-4deg)'}}>
         <Img src={staticFile('img/prep/walker_torn.png')} style={{width: 330, filter: 'drop-shadow(0 18px 24px rgba(0,0,0,0.6))'}} />
-        <div style={{position: 'absolute', left: 64, top: 16, width: 200, height: 40, background: INK, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: JF.display, fontSize: 30, color: usePal().mark}}>? ? ?</div>
+        <div style={{position: 'absolute', left: 64, top: 16, width: 200, height: 40, background: INK, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: JF.display, fontSize: 30, color: boxOf(usePal())}}>? ? ?</div>
       </div>
       <Note text="60 copies" x={450} y={260} rot={-6} size={56} />
       <Arrow x1={300} y1={760} x2={sv[0] - 6} y2={sv[1] - 26} bow={-30} />
@@ -112,7 +112,7 @@ export const JHDix: React.FC = () => {
     <AbsoluteFill style={{background: '#121212'}}>
       <div style={{position: 'absolute', inset: 0, transform: 'rotate(-1.5deg)', transformOrigin: '1100px 590px'}}>
         <Img src={staticFile('img/test/dix_p2.jpg')} style={{position: 'absolute', left: pl, top: pt, width: 1642 * ps, filter: 'saturate(0.55) contrast(1.1)'}} />
-        <div style={{position: 'absolute', left: L(193), top: T(1612), width: (885 - 193) * ps, height: 42 * ps, background: usePal().mark, mixBlendMode: 'multiply'}} />
+        <div style={{position: 'absolute', left: L(193), top: T(1612), width: (885 - 193) * ps, height: 42 * ps, background: boxOf(usePal()), mixBlendMode: 'multiply'}} />
         <div style={{position: 'absolute', left: L(120), top: T(1598), width: (1500 - 120) * ps, height: 114 * ps, boxShadow: '0 0 0 3000px rgba(8,8,8,0.72)', borderRadius: 4}} />
       </div>
       <Picture src="img/jh/dix_cut.png" place={cplace} size={D.size} bw="grayscale(1) contrast(1.15)" style={{filter: 'grayscale(1) contrast(1.15) drop-shadow(0 0 0 #fff) drop-shadow(0 20px 30px rgba(0,0,0,0.7))'}} />

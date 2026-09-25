@@ -16,7 +16,10 @@ export const ORANGE = '#F28C28';
 export const INK = '#111111';
 
 /** Signature colours: `mark` = outlines, highlighter, notes; `ink` = type on the highlighter; `subject` = the one figure in colour. */
-export type Palette = {name: string; mark: string; ink: string; subject: string};
+export type Palette = {name: string; mark: string; ink: string; subject: string; box?: string; accent?: string};
+/** Highlighter box colour (defaults to mark) and accent for notes, arrows and pins (defaults to mark). */
+export const boxOf = (p: Palette) => p.box ?? p.mark;
+export const accentOf = (p: Palette) => p.accent ?? p.mark;
 export const PALETTES: Record<string, Palette> = {
   harris: {name: 'Highlighter yellow + orange', mark: Y, ink: INK, subject: ORANGE},
   ember: {name: 'Ember orange + crimson', mark: '#FF6A1F', ink: INK, subject: '#D92B3A'},
@@ -24,6 +27,10 @@ export const PALETTES: Record<string, Palette> = {
   teal: {name: 'Teal + coral', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6A55'},
   electric: {name: 'Electric blue + amber', mark: '#4D8CFF', ink: '#FFFFFF', subject: '#FFB300'},
   pink: {name: 'Hot pink + gold', mark: '#FF4FA0', ink: INK, subject: '#FFC21A'},
+  // teal + coral + orange: three ways to split the jobs
+  tcoA: {name: 'A · teal outlines, orange titles, coral subject', mark: '#2FE0C4', ink: INK, subject: '#FF6F61', box: '#FF9F1C', accent: '#2FE0C4'},
+  tcoB: {name: 'B · teal outlines, coral titles, orange subject', mark: '#2FE0C4', ink: INK, subject: '#FF9F1C', box: '#FF6F61', accent: '#2FE0C4'},
+  tcoC: {name: 'C · teal outlines + titles, coral subject, orange notes', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6F61', accent: '#FF9F1C'},
 };
 export const PaletteCtx = React.createContext<Palette>(PALETTES.harris);
 export const usePal = () => React.useContext(PaletteCtx);
@@ -133,10 +140,10 @@ export const Highlight: React.FC<{text: string; after?: string; x: number; y: nu
   return (
     <div style={{position: 'absolute', left: x, top: y, display: 'flex', alignItems: 'center', gap: size * 0.28, transform: `rotate(${rot}deg)`}}>
       <div style={{position: 'relative', padding: `${size * 0.1}px ${size * 0.22}px ${size * 0.06}px`}}>
-        <div style={{position: 'absolute', inset: 0, background: pal.mark, clipPath: `polygon(${pts.join(',')})`, transformOrigin: 'left', transform: `scaleX(${wipe})`}} />
+        <div style={{position: 'absolute', inset: 0, background: boxOf(pal), clipPath: `polygon(${pts.join(',')})`, transformOrigin: 'left', transform: `scaleX(${wipe})`}} />
         <div style={{position: 'relative', fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: pal.ink, whiteSpace: 'nowrap', opacity: interpolate(frame, [at + 3, at + 7], [0, 1], clamp)}}>{text}</div>
       </div>
-      {after && <div style={{fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: pal.mark, whiteSpace: 'nowrap', textShadow: '0 3px 14px rgba(0,0,0,0.55)', opacity: interpolate(frame, [at + 6, at + 10], [0, 1], clamp)}}>{after}</div>}
+      {after && <div style={{fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: boxOf(pal), whiteSpace: 'nowrap', textShadow: '0 3px 14px rgba(0,0,0,0.55)', opacity: interpolate(frame, [at + 6, at + 10], [0, 1], clamp)}}>{after}</div>}
     </div>
   );
 };
@@ -150,13 +157,13 @@ export const Grid: React.FC<{x: number; y: number; w: number; h: number; cell?: 
 );
 
 export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string}> = ({text, x, y, size = 46, rot = -4, color}) => (
-  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? usePal().mark, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
+  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? accentOf(usePal()), transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
 );
 
 /** A hand-drawn arrow from (x1,y1) to (x2,y2) with a slight bow. */
 export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number}> = ({x1, y1, x2, y2, bow = 40, color, width = 5}) => {
   const pal = usePal();
-  color = color ?? pal.mark;
+  color = color ?? accentOf(pal);
   const mx = (x1 + x2) / 2 - ((y2 - y1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const my = (y1 + y2) / 2 + ((x2 - x1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const ang = Math.atan2(y2 - my, x2 - mx);
