@@ -1,71 +1,110 @@
 {
- "test/dix.jpg": {
-  "title": "File:NPG 77 261 det Dix.jpg",
-  "artist": "Unidentified Artist",
-  "date": "1849date QS:P571,+1849-00-00T00:00:00Z/9",
-  "licence": "CC0",
-  "page": "https://commons.wikimedia.org/wiki/File:NPG_77_261_det_Dix.jpg"
- },
- "test/drunkards_progress.jpg": {
-  "title": "The drunkards progress. From the first glass to the grave / lith. & pub. by N. Currier.",
-  "artist": "N. Currier (Firm)",
-  "date": "1846-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/91796265/",
-  "source": "loc:91796265"
- },
- "test/walker_p1.jpg": {
-  "title": "Walker's appeal, in four articles, : together with a preamble to the colored citizens of the world, but in particular and very expressly to those of the United States of America. Written in Boston, in the state of Massachusetts, Sept. 28th, 1829 (page 2)",
-  "artist": "Walker, David, 1785-1830",
-  "date": "1829",
-  "licence": "public domain by age (1829)",
-  "page": "https://archive.org/details/walkersappealinf1829walk/page/n2",
-  "source": "iabook:walkersappealinf1829walk:2"
- },
- "test/dix_title.jpg": {
-  "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 4)",
-  "artist": "Dix, Dorothea Lynde, 1802-1887",
-  "date": "1904",
-  "licence": "public domain by age (1904)",
-  "page": "https://archive.org/details/memorialtolegisl00dixd/page/n4",
-  "source": "iabook:memorialtolegisl00dixd:4"
- },
- "test/dix_p2.jpg": {
-  "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 5)",
-  "artist": "Dix, Dorothea Lynde, 1802-1887",
-  "date": "1904",
-  "licence": "public domain by age (1904)",
-  "page": "https://archive.org/details/memorialtolegisl00dixd/page/n5",
-  "source": "iabook:memorialtolegisl00dixd:5"
- },
- "test/brig.jpg": {
-  "title": "Brig on the Water",
-  "artist": "Gustave Le Gray",
-  "date": "1856",
-  "licence": "CC0 (The Met Open Access)",
-  "page": "https://www.metmuseum.org/art/collection/search/261937",
-  "source": "met:261937"
- },
- "jh/camp_meeting.jpg": {
-  "title": "Camp-meeting / A. Rider pinxit ; drawn on stone by H. Bridport.",
-  "artist": "Bridport, Hugh, 1794-approximately 1868, lithographer, Rider, Alexander, active 1810-1834, artist, Kennedy & Lucas's Lithography, publisher",
-  "date": "1829-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/96510018/",
-  "source": "loc:96510018"
- },
- "jh/camp_meeting_1819.jpg": {
-  "title": "Camp meeting of the Methodists in N. America / J. Milbert del. ; M. Dubourg sculp.",
-  "artist": "Dubourg, M., engraver, Milbert, Jacques G\u00e9rard, 1766-1840, artist",
-  "date": "1819-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/98508274/",
-  "source": "loc:98508274"
- },
- "img/jh/mitchell_1836.jpg": {
-  "file": "public/img/jh/mitchell_1836.jpg",
-  "title": "Mitchell's map of the United States, 1836",
-  "source": "https://www.loc.gov/item/87692342/",
-  "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
- }
+  "test/dix.jpg": {
+    "title": "File:NPG 77 261 det Dix.jpg",
+    "artist": "Unidentified Artist",
+    "date": "1849date QS:P571,+1849-00-00T00:00:00Z/9",
+    "licence": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:NPG_77_261_det_Dix.jpg"
+  },
+  "test/drunkards_progress.jpg": {
+    "title": "The drunkards progress. From the first glass to the grave / lith. & pub. by N. Currier.",
+    "artist": "N. Currier (Firm)",
+    "date": "1846-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/91796265/",
+    "source": "loc:91796265"
+  },
+  "test/walker_p1.jpg": {
+    "title": "Walker's appeal, in four articles, : together with a preamble to the colored citizens of the world, but in particular and very expressly to those of the United States of America. Written in Boston, in the state of Massachusetts, Sept. 28th, 1829 (page 2)",
+    "artist": "Walker, David, 1785-1830",
+    "date": "1829",
+    "licence": "public domain by age (1829)",
+    "page": "https://archive.org/details/walkersappealinf1829walk/page/n2",
+    "source": "iabook:walkersappealinf1829walk:2"
+  },
+  "test/dix_title.jpg": {
+    "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 4)",
+    "artist": "Dix, Dorothea Lynde, 1802-1887",
+    "date": "1904",
+    "licence": "public domain by age (1904)",
+    "page": "https://archive.org/details/memorialtolegisl00dixd/page/n4",
+    "source": "iabook:memorialtolegisl00dixd:4"
+  },
+  "test/dix_p2.jpg": {
+    "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 5)",
+    "artist": "Dix, Dorothea Lynde, 1802-1887",
+    "date": "1904",
+    "licence": "public domain by age (1904)",
+    "page": "https://archive.org/details/memorialtolegisl00dixd/page/n5",
+    "source": "iabook:memorialtolegisl00dixd:5"
+  },
+  "test/brig.jpg": {
+    "title": "Brig on the Water",
+    "artist": "Gustave Le Gray",
+    "date": "1856",
+    "licence": "CC0 (The Met Open Access)",
+    "page": "https://www.metmuseum.org/art/collection/search/261937",
+    "source": "met:261937"
+  },
+  "jh/camp_meeting.jpg": {
+    "title": "Camp-meeting / A. Rider pinxit ; drawn on stone by H. Bridport.",
+    "artist": "Bridport, Hugh, 1794-approximately 1868, lithographer, Rider, Alexander, active 1810-1834, artist, Kennedy & Lucas's Lithography, publisher",
+    "date": "1829-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/96510018/",
+    "source": "loc:96510018"
+  },
+  "jh/camp_meeting_1819.jpg": {
+    "title": "Camp meeting of the Methodists in N. America / J. Milbert del. ; M. Dubourg sculp.",
+    "artist": "Dubourg, M., engraver, Milbert, Jacques G\u00e9rard, 1766-1840, artist",
+    "date": "1819-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/98508274/",
+    "source": "loc:98508274"
+  },
+  "img/jh/mitchell_1836.jpg": {
+    "file": "public/img/jh/mitchell_1836.jpg",
+    "title": "Mitchell's map of the United States, 1836",
+    "source": "https://www.loc.gov/item/87692342/",
+    "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
+  },
+  "ch01/prison.jpg": {
+    "title": "Eastern penitentiary of Pennsylvania, near Philadelphia / from nature & on stone by G. Lehman ; Childs & Inman lithrs.",
+    "artist": "Childs & Inman, lithographer, Lehman, George, -1870, artist, Childs & Lehman, publisher",
+    "date": "1833-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2014648406/",
+    "source": "loc:2014648406"
+  },
+  "ch01/school.jpg": {
+    "title": "School house, Tappan / painted by Robert W. Weir ; engraved on steel by James Smillie.",
+    "artist": "Smillie, James, 1807-1885, engraver, Weir, Robert Walter, 1803-1889, artist, Neale, John, printer",
+    "date": "1840-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2012648931/",
+    "source": "loc:2012648931"
+  },
+  "ch01/marriage.jpg": {
+    "title": "The day before marriage",
+    "artist": "N. Currier (Firm)",
+    "date": "1847-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/91791067/",
+    "source": "loc:91791067"
+  },
+  "ch01/slavery.jpg": {
+    "title": "Am I not a man and a brother?",
+    "artist": "American Anti-Slavery Society., Anti-Slavery Office (New York, N.Y,)",
+    "date": "1837-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661312/",
+    "source": "loc:2008661312"
+  },
+  "ch01/mott.jpg": {
+    "title": "File:Lucretia Mott by Joseph Kyle.jpg",
+    "artist": "APK",
+    "date": "2026-07-08 12:30:54",
+    "licence": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lucretia_Mott_by_Joseph_Kyle.jpg"
+  }
 }

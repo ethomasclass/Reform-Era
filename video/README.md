@@ -42,3 +42,12 @@ VOICE_MAX_PAUSE=0.25 VOICE_SENT_GAP=0 VOICE_PARA_GAP=0.35 VOICE_STRETCH=1.15 pyt
 - Render: `npx remotion render src/index.ts StyleTest out/style_test.mp4 --crf=18 --browser-executable=$REMOTION_CHROME`
 
 Image credits are in `public/img/credits.json`. The Savannah waterfront and the coat are Gemini images (`tools/gemini_image.py`).
+
+## Full build
+
+- Script: `script/ch01_cold_open.txt` … `script/ch11_why.txt` (one file per chapter).
+- Narration: `tools/voice_all.sh` voices every chapter at the locked pace (chapters 6, 10 and 11 run slower).
+  Chapter WAVs and word timings are in `public/audio/ch*.wav` / `.words.json`.
+- Music: `python3 tools/music_lyria.py <cue>` (Gemini Lyria) writes `public/music/<cue>.mp3`; prompts are in `CUES`.
+- Look: palette `locked` in `src/jh/Kit.tsx` (teal outlines, orange titles, coral subject); graphics step at 12 fps.
+- Chapters: `src/ch/Ch01.tsx` …, composition ids `Ch01` …. Review renders go to `review/chapters/`.

@@ -27,10 +27,21 @@ CACHE = os.path.join(OUT, "cache")
 
 # Spoken forms for words the voices tend to misread. Keys are matched as whole words.
 PRONOUNCE = {"1829": "eighteen twenty-nine", "1830": "eighteen thirty", "1830s": "eighteen-thirties",
-             "40s": "forties", "1800s": "eighteen hundreds"}
+             "40s": "forties", "1800s": "eighteen hundreds",
+             "1780": "seventeen eighty", "1815": "eighteen fifteen", "1831": "eighteen thirty-one",
+             "1834": "eighteen thirty-four", "1835": "eighteen thirty-five", "1836": "eighteen thirty-six",
+             "1840": "eighteen forty", "1840s": "eighteen-forties", "1841": "eighteen forty-one",
+             "1844": "eighteen forty-four", "1845": "eighteen forty-five", "1848": "eighteen forty-eight",
+             "1850s": "eighteen-fifties", "1851": "eighteen fifty-one", "1860": "eighteen sixty",
+             "1879": "eighteen seventy-nine", "1888": "eighteen eighty-eight", "1920": "nineteen twenty",
+             "2025": "twenty twenty-five", "6,000": "six thousand",
+             "Hydesville": "Hides-ville", "Noyes": "Noise", "Oneida": "Oh-nye-da", "coverture": "cuv-er-cher"}
+DOLLARS = {"1,000": "one thousand", "5,000": "five thousand", "10,000": "ten thousand"}
 
 
 def spoken(text):
+    text = re.sub(r"\$([\d,]+)", lambda m: DOLLARS.get(m.group(1), m.group(1)) + " dollars", text)
+    text = re.sub(r"\bJanuary 1\b", "January first", text)
     for k, v in PRONOUNCE.items():
         text = re.sub(rf"\b{re.escape(k)}\b", v, text)
     return text

@@ -9,6 +9,7 @@ import {frames, type ClipName} from './test/data';
 import {JFonts, PALETTES, PaletteCtx} from './jh/Kit';
 import {JHCold, JHDix, JHMap, JHRevival} from './jh/Mockups';
 import {MapTest, MAP_TEST_FRAMES} from './jh/MapTest';
+import {Ch01, CH01_FRAMES} from './ch/Ch01';
 
 const SLATE = 75;
 
@@ -53,6 +54,7 @@ const reelFrames = 2 * SLATE + SCENES.reduce((a, s) => a + frames(s.clip), 0);
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="Ch01" width={W} height={H} fps={FPS} durationInFrames={CH01_FRAMES} component={() => <JFonts><Ch01 /></JFonts>} />
     <Composition id="MapTest" width={W} height={H} fps={FPS} durationInFrames={MAP_TEST_FRAMES} component={() => <JFonts><MapTest /></JFonts>} />
     <Composition id="StyleTest" component={Reel} width={W} height={H} fps={FPS} durationInFrames={reelFrames} />
     {SCENES.map((s) => (

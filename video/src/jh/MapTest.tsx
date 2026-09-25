@@ -59,11 +59,11 @@ const Sfx: React.FC<{at: number; src: string; volume?: number}> = ({at, src, vol
   <Sequence from={Math.max(0, at)} durationInFrames={60} layout="none"><Audio src={staticFile(src)} volume={volume} /></Sequence>
 );
 
-const Scene: React.FC = () => {
+export const MapScene: React.FC<{n?: Narration; withAudio?: boolean}> = ({n = N, withAudio = true}) => {
   const frame = useCurrentFrame();
   const g = useGFrame();
   const pal = usePal();
-  const t = makeTimeline(N, 30);
+  const t = makeTimeline(n, 30);
   const at = t.at;
 
   const mid = [(BOSTON[0] + SAVANNAH[0]) / 2, (BOSTON[1] + SAVANNAH[1]) / 2];
@@ -132,8 +132,8 @@ const Scene: React.FC = () => {
 
   return (
     <AbsoluteFill style={{background: '#1a1814', overflow: 'hidden'}}>
-      <Audio src={staticFile('audio/test_map.wav')} />
-      <Audio src={staticFile('music/intrigue.mp3')} volume={(f) => interpolate(f, [0, 20, MAP_TEST_FRAMES - 30, MAP_TEST_FRAMES], [0, 0.16, 0.16, 0], clamp)} />
+      {withAudio && <Audio src={staticFile('audio/test_map.wav')} />}
+      {withAudio && <Audio src={staticFile('music/intrigue.mp3')} volume={(f) => interpolate(f, [0, 20, MAP_TEST_FRAMES - 30, MAP_TEST_FRAMES], [0, 0.16, 0.16, 0], clamp)} />}
       <Audio src={staticFile('sfx/sea_ambience.wav')} volume={(f) => interpolate(f, [at('ship') - 10, at('ship') + 10, at('Somewhere') + 30, at('Somewhere') + 60], [0, 0.12, 0.12, 0], clamp)} />
 
       {/* the map, in map coordinates, rotated with the camera */}
@@ -272,7 +272,7 @@ const Strike: React.FC<{x: number; y: number; w: number; at: number; out: number
 export const MapTest: React.FC = () => (
   <PaletteCtx.Provider value={PALETTES.locked}>
     <StepCtx.Provider value={2.5}>
-      <Scene />
+      <MapScene />
     </StepCtx.Provider>
   </PaletteCtx.Provider>
 );
