@@ -15,6 +15,19 @@ export const Y = '#FFE11A'; // highlighter yellow
 export const ORANGE = '#F28C28';
 export const INK = '#111111';
 
+/** Signature colours: `mark` = outlines, highlighter, notes; `ink` = type on the highlighter; `subject` = the one figure in colour. */
+export type Palette = {name: string; mark: string; ink: string; subject: string};
+export const PALETTES: Record<string, Palette> = {
+  harris: {name: 'Highlighter yellow + orange', mark: Y, ink: INK, subject: ORANGE},
+  ember: {name: 'Ember orange + crimson', mark: '#FF6A1F', ink: INK, subject: '#D92B3A'},
+  liberty: {name: 'Signal red + blue', mark: '#E8392B', ink: '#FFFFFF', subject: '#2F74FF'},
+  teal: {name: 'Teal + coral', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6A55'},
+  electric: {name: 'Electric blue + amber', mark: '#4D8CFF', ink: '#FFFFFF', subject: '#FFB300'},
+  pink: {name: 'Hot pink + gold', mark: '#FF4FA0', ink: INK, subject: '#FFC21A'},
+};
+export const PaletteCtx = React.createContext<Palette>(PALETTES.harris);
+export const usePal = () => React.useContext(PaletteCtx);
+
 export const JF = {
   display: '"Abril Fatface", serif',
   heavy: '"Playfair Display", serif',
@@ -44,7 +57,8 @@ export const Picture: React.FC<{src: string; place: Place; size: [number, number
 );
 
 /** Colour the masked subject: a flat colour laid over the black-and-white picture in 'color' blend keeps the engraving's shading. */
-export const Tint: React.FC<{mask: string; place: Place; size: [number, number]; color?: string; strength?: number}> = ({mask, place, size, color = ORANGE, strength = 1}) => {
+export const Tint: React.FC<{mask: string; place: Place; size: [number, number]; color?: string; strength?: number}> = ({mask, place, size, color, strength = 1}) => {
+  color = color ?? usePal().subject;
   const m: React.CSSProperties = {
     position: 'absolute', left: place.left, top: place.top, width: size[0] * place.scale, height: size[1] * place.scale,
     WebkitMaskImage: `url(${staticFile(mask)})`, WebkitMaskSize: '100% 100%', maskImage: `url(${staticFile(mask)})`, maskSize: '100% 100%',
@@ -66,8 +80,9 @@ export const ColourReveal: React.FC<{src: string; place: Place; size: [number, n
 
 /** Yellow outlines traced around masked subjects, drawn on from `at` over `dur` frames. `part` < 1 leaves the loop open. */
 export const Traced: React.FC<{paths: string[]; place: Place; at?: number; dur?: number; part?: number; width?: number; color?: string; jitter?: number}> = ({
-  paths, place, at = 0, dur = 14, part = 1, width = 5, color = Y, jitter = 0,
+  paths, place, at = 0, dur = 14, part = 1, width = 5, color, jitter = 0,
 }) => {
+  color = color ?? usePal().mark;
   const frame = useCurrentFrame();
   const p = interpolate(frame, [at, at + dur], [0, 1], clamp) * part;
   return (
@@ -84,8 +99,9 @@ export const Traced: React.FC<{paths: string[]; place: Place; at?: number; dur?:
 
 /** A loose hand-drawn ellipse (halo, circle-this). */
 export const Loop: React.FC<{cx: number; cy: number; rx: number; ry: number; at?: number; dur?: number; width?: number; color?: string; seed?: number; tilt?: number}> = ({
-  cx, cy, rx, ry, at = 0, dur = 12, width = 5, color = Y, seed = 1, tilt = 0,
+  cx, cy, rx, ry, at = 0, dur = 12, width = 5, color, seed = 1, tilt = 0,
 }) => {
+  color = color ?? usePal().mark;
   const frame = useCurrentFrame();
   const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
   const pts: string[] = [];
@@ -108,6 +124,7 @@ export const Highlight: React.FC<{text: string; after?: string; x: number; y: nu
   text, after, x, y, size = 96, at = 0, seed = 3, rot = 0,
 }) => {
   const frame = useCurrentFrame();
+  const pal = usePal();
   const wipe = interpolate(frame, [at, at + 8], [0, 1], clamp);
   const pts: string[] = [];
   const steps = 40;
@@ -116,10 +133,10 @@ export const Highlight: React.FC<{text: string; after?: string; x: number; y: nu
   return (
     <div style={{position: 'absolute', left: x, top: y, display: 'flex', alignItems: 'center', gap: size * 0.28, transform: `rotate(${rot}deg)`}}>
       <div style={{position: 'relative', padding: `${size * 0.1}px ${size * 0.22}px ${size * 0.06}px`}}>
-        <div style={{position: 'absolute', inset: 0, background: Y, clipPath: `polygon(${pts.join(',')})`, transformOrigin: 'left', transform: `scaleX(${wipe})`}} />
-        <div style={{position: 'relative', fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: INK, whiteSpace: 'nowrap', opacity: interpolate(frame, [at + 3, at + 7], [0, 1], clamp)}}>{text}</div>
+        <div style={{position: 'absolute', inset: 0, background: pal.mark, clipPath: `polygon(${pts.join(',')})`, transformOrigin: 'left', transform: `scaleX(${wipe})`}} />
+        <div style={{position: 'relative', fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: pal.ink, whiteSpace: 'nowrap', opacity: interpolate(frame, [at + 3, at + 7], [0, 1], clamp)}}>{text}</div>
       </div>
-      {after && <div style={{fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: Y, whiteSpace: 'nowrap', textShadow: '0 3px 14px rgba(0,0,0,0.55)', opacity: interpolate(frame, [at + 6, at + 10], [0, 1], clamp)}}>{after}</div>}
+      {after && <div style={{fontFamily: JF.display, fontSize: size, lineHeight: 1.05, color: pal.mark, whiteSpace: 'nowrap', textShadow: '0 3px 14px rgba(0,0,0,0.55)', opacity: interpolate(frame, [at + 6, at + 10], [0, 1], clamp)}}>{after}</div>}
     </div>
   );
 };
@@ -132,12 +149,14 @@ export const Grid: React.FC<{x: number; y: number; w: number; h: number; cell?: 
     WebkitMaskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)', maskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)'}} />
 );
 
-export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string}> = ({text, x, y, size = 46, rot = -4, color = Y}) => (
-  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
+export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string}> = ({text, x, y, size = 46, rot = -4, color}) => (
+  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? usePal().mark, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
 );
 
 /** A hand-drawn arrow from (x1,y1) to (x2,y2) with a slight bow. */
-export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number}> = ({x1, y1, x2, y2, bow = 40, color = Y, width = 5}) => {
+export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number}> = ({x1, y1, x2, y2, bow = 40, color, width = 5}) => {
+  const pal = usePal();
+  color = color ?? pal.mark;
   const mx = (x1 + x2) / 2 - ((y2 - y1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const my = (y1 + y2) / 2 + ((x2 - x1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const ang = Math.atan2(y2 - my, x2 - mx);

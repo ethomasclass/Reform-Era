@@ -6,7 +6,7 @@ import {useCurrentFrame} from 'remotion';
 import {CinemaCold, CinemaDix, CinemaGallons} from './test/Cinematic';
 import {CollageCold, CollageDix, CollageGallons} from './test/Collage';
 import {frames, type ClipName} from './test/data';
-import {JFonts} from './jh/Kit';
+import {JFonts, PALETTES, PaletteCtx} from './jh/Kit';
 import {JHCold, JHDix, JHMap, JHRevival} from './jh/Mockups';
 
 const SLATE = 75;
@@ -61,5 +61,14 @@ export const Root: React.FC = () => (
       const Comp = C as React.FC;
       return <Composition key={id as string} id={id as string} width={W} height={H} fps={FPS} durationInFrames={30} component={() => <JFonts><Comp /></JFonts>} />;
     })}
+    {Object.keys(PALETTES).flatMap((p) =>
+      [['Cold', JHCold], ['Map', JHMap], ['Revival', JHRevival], ['Dix', JHDix]].map(([n, C]) => {
+        const Comp = C as React.FC;
+        return (
+          <Composition key={`${p}-${n}`} id={`P-${p}-${n}`} width={W} height={H} fps={FPS} durationInFrames={30}
+            component={() => <PaletteCtx.Provider value={PALETTES[p]}><JFonts><Comp /></JFonts></PaletteCtx.Provider>} />
+        );
+      }),
+    )}
   </>
 );
