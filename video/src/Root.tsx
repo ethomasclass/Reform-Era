@@ -8,6 +8,7 @@ import {CollageCold, CollageDix, CollageGallons} from './test/Collage';
 import {frames, type ClipName} from './test/data';
 import {JFonts, PALETTES, PaletteCtx} from './jh/Kit';
 import {JHCold, JHDix, JHMap, JHRevival} from './jh/Mockups';
+import {MapTest, MAP_TEST_FRAMES} from './jh/MapTest';
 
 const SLATE = 75;
 
@@ -52,6 +53,7 @@ const reelFrames = 2 * SLATE + SCENES.reduce((a, s) => a + frames(s.clip), 0);
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="MapTest" width={W} height={H} fps={FPS} durationInFrames={MAP_TEST_FRAMES} component={() => <JFonts><MapTest /></JFonts>} />
     <Composition id="StyleTest" component={Reel} width={W} height={H} fps={FPS} durationInFrames={reelFrames} />
     {SCENES.map((s) => (
       <Composition key={s.id} id={s.id} width={W} height={H} fps={FPS} durationInFrames={frames(s.clip)}

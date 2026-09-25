@@ -22,6 +22,7 @@ export const boxOf = (p: Palette) => p.box ?? p.mark;
 export const accentOf = (p: Palette) => p.accent ?? p.mark;
 export const PALETTES: Record<string, Palette> = {
   harris: {name: 'Highlighter yellow + orange', mark: Y, ink: INK, subject: ORANGE},
+  locked: {name: 'Locked · teal outlines, orange titles, coral subject', mark: '#2FE0C4', ink: INK, subject: '#FF6F61', box: '#FF9F1C', accent: '#2FE0C4'},
   ember: {name: 'Ember orange + crimson', mark: '#FF6A1F', ink: INK, subject: '#D92B3A'},
   liberty: {name: 'Signal red + blue', mark: '#E8392B', ink: '#FFFFFF', subject: '#2F74FF'},
   teal: {name: 'Teal + coral', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6A55'},
@@ -33,6 +34,14 @@ export const PALETTES: Record<string, Palette> = {
   tcoC: {name: 'C · teal outlines + titles, coral subject, orange notes', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6F61', accent: '#FF9F1C'},
 };
 export const PaletteCtx = React.createContext<Palette>(PALETTES.harris);
+
+/** Graphics step at ~12 fps over smooth camera moves (set to 0 for smooth graphics). */
+export const StepCtx = React.createContext<number>(0);
+export const useGFrame = () => {
+  const f = useCurrentFrame();
+  const step = React.useContext(StepCtx);
+  return step ? Math.floor(f / step) * step : f;
+};
 export const usePal = () => React.useContext(PaletteCtx);
 
 export const JF = {
@@ -90,7 +99,7 @@ export const Traced: React.FC<{paths: string[]; place: Place; at?: number; dur?:
   paths, place, at = 0, dur = 14, part = 1, width = 5, color, jitter = 0,
 }) => {
   color = color ?? usePal().mark;
-  const frame = useCurrentFrame();
+  const frame = useGFrame();
   const p = interpolate(frame, [at, at + dur], [0, 1], clamp) * part;
   return (
     <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible', pointerEvents: 'none'}} width={1920} height={1080}>
@@ -109,7 +118,7 @@ export const Loop: React.FC<{cx: number; cy: number; rx: number; ry: number; at?
   cx, cy, rx, ry, at = 0, dur = 12, width = 5, color, seed = 1, tilt = 0,
 }) => {
   color = color ?? usePal().mark;
-  const frame = useCurrentFrame();
+  const frame = useGFrame();
   const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
   const pts: string[] = [];
   const n = 70;
@@ -130,7 +139,7 @@ export const Loop: React.FC<{cx: number; cy: number; rx: number; ry: number; at?
 export const Highlight: React.FC<{text: string; after?: string; x: number; y: number; size?: number; at?: number; seed?: number; rot?: number}> = ({
   text, after, x, y, size = 96, at = 0, seed = 3, rot = 0,
 }) => {
-  const frame = useCurrentFrame();
+  const frame = useGFrame();
   const pal = usePal();
   const wipe = interpolate(frame, [at, at + 8], [0, 1], clamp);
   const pts: string[] = [];
@@ -156,23 +165,34 @@ export const Grid: React.FC<{x: number; y: number; w: number; h: number; cell?: 
     WebkitMaskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)', maskImage: 'radial-gradient(ellipse at 60% 45%, #000 30%, transparent 75%)'}} />
 );
 
-export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string}> = ({text, x, y, size = 46, rot = -4, color}) => (
-  <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? accentOf(usePal()), transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap', textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{text}</div>
-);
+/** Handwritten note, written on left to right from `at` over `dur` frames. */
+export const Note: React.FC<{text: string; x: number; y: number; size?: number; rot?: number; color?: string; at?: number; dur?: number; out?: number}> = ({text, x, y, size = 46, rot = -4, color, at = -999, dur = 10, out = Infinity}) => {
+  const frame = useGFrame();
+  const accent = accentOf(usePal());
+  if (frame < at || frame >= out) return null;
+  const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
+  return (
+    <div style={{position: 'absolute', left: x, top: y, fontFamily: JF.hand, fontSize: size, color: color ?? accent, transform: `rotate(${rot}deg)`, whiteSpace: 'nowrap',
+      textShadow: '0 0 2px #111, 0 0 4px #111, 2px 2px 0 #111, -2px 2px 0 #111, 2px -2px 0 #111, -2px -2px 0 #111, 0 3px 12px rgba(0,0,0,0.7)', clipPath: `inset(-20% ${(1 - p) * 100}% -20% -5%)`}}>{text}</div>
+  );
+};
 
 /** A hand-drawn arrow from (x1,y1) to (x2,y2) with a slight bow. */
-export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number}> = ({x1, y1, x2, y2, bow = 40, color, width = 5}) => {
+export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; bow?: number; color?: string; width?: number; at?: number; dur?: number; out?: number}> = ({x1, y1, x2, y2, bow = 40, color, width = 5, at = -999, dur = 8, out = Infinity}) => {
   const pal = usePal();
   color = color ?? accentOf(pal);
+  const frame = useGFrame();
+  const p = interpolate(frame, [at, at + dur], [0, 1], clamp);
+  if (frame < at || frame >= out) return null;
   const mx = (x1 + x2) / 2 - ((y2 - y1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const my = (y1 + y2) / 2 + ((x2 - x1) / Math.hypot(x2 - x1, y2 - y1)) * bow;
   const ang = Math.atan2(y2 - my, x2 - mx);
   const h = 26;
   return (
     <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1920} height={1080}>
-      <path d={`M${x1},${y1} Q${mx},${my} ${x2},${y2}`} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" />
-      <path d={`M${x2 - h * Math.cos(ang - 0.45)},${y2 - h * Math.sin(ang - 0.45)} L${x2},${y2} L${x2 - h * Math.cos(ang + 0.45)},${y2 - h * Math.sin(ang + 0.45)}`}
-        fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" />
+      <path d={`M${x1},${y1} Q${mx},${my} ${x2},${y2}`} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} />
+      {p >= 1 && <path d={`M${x2 - h * Math.cos(ang - 0.45)},${y2 - h * Math.sin(ang - 0.45)} L${x2},${y2} L${x2 - h * Math.cos(ang + 0.45)},${y2 - h * Math.sin(ang + 0.45)}`}
+        fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" />}
     </svg>
   );
 };
