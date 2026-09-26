@@ -369,7 +369,7 @@ const Body: React.FC = () => {
       {scene}
       <Finish vignette={0.3} />
       <Audio src={staticFile('audio/ch03_knock_once.wav')} />
-      <Audio src={staticFile('music/spirits.mp3')} volume={(f) => interpolate(f, [0, 20, end - 20, end + 30], [0, 0.15, 0.15, 0], clamp)} />
+      <Audio src={staticFile('music/spirits_dark.mp3')} volume={(f) => interpolate(f, [0, 20, end - 20, end + 30], [0, 0.17, 0.17, 0], clamp)} />
       {cuts.slice(1).map(([f], i) => <Sfx key={i} at={f} src="sfx/whoosh.wav" volume={0.28} />)}
       {[at('knocking'), at('knocks'), at('Once')].map((f, i) => <Sfx key={`k${i}`} at={f} src="sfx/knock.wav" volume={0.5} />)}
       {['new truths', '1848', 'Hydesville', 'Maggie', 'spirit', 'Barnum', 'Spiritualism', 'Civil', 'explodes', 'Mary', '1888', 'trick', 'Unitarians', 'Universalists', '1830', 'Joseph', 'Brigham', 'Utah', 'newcomers'].map((c) => (
