@@ -5,3 +5,4 @@ video/out/
 video/.env
 video/public/audio/pace_*.wav
 review/Fix_Everything_*.mp4
+ffmpeg2pass-*
