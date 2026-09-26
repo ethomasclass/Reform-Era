@@ -31,6 +31,8 @@ export const accentOf = (p: Palette) => p.accent ?? p.mark;
 export const PALETTES: Record<string, Palette> = {
   harris: {name: 'Highlighter yellow + orange', mark: Y, ink: INK, subject: ORANGE},
   locked: {name: 'Locked · teal outlines, orange titles, coral subject', mark: '#2FE0C4', ink: INK, subject: '#FF6F61', box: '#FF9F1C', accent: '#2FE0C4'},
+  /** Heavy chapters (Dix, Oneida, abolition): teal lines only; titles on bone paper, no coral subject. */
+  quiet: {name: 'Quiet · teal lines, bone titles', mark: '#2FE0C4', ink: INK, subject: '#EDE7DC', box: '#EDE7DC', accent: '#2FE0C4'},
   ember: {name: 'Ember orange + crimson', mark: '#FF6A1F', ink: INK, subject: '#D92B3A'},
   liberty: {name: 'Signal red + blue', mark: '#E8392B', ink: '#FFFFFF', subject: '#2F74FF'},
   teal: {name: 'Teal + coral', mark: '#2FE0C4', ink: '#0B1F1C', subject: '#FF6A55'},
