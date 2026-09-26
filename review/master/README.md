@@ -9,11 +9,14 @@ parts because GitHub refuses files over 100 MB. Download all six `.part_` files 
 cat Fix_Everything_1080p.mp4.part_* > Fix_Everything_1080p.mp4
 ```
 
-**Windows** (Command Prompt, in that folder):
+**Windows PowerShell** (the default Windows terminal, in that folder):
 
 ```
-copy /b Fix_Everything_1080p.mp4.part_aa + Fix_Everything_1080p.mp4.part_ab + Fix_Everything_1080p.mp4.part_ac + Fix_Everything_1080p.mp4.part_ad + Fix_Everything_1080p.mp4.part_ae + Fix_Everything_1080p.mp4.part_af Fix_Everything_1080p.mp4
+cmd /c "copy /b Fix_Everything_1080p.mp4.part_aa + Fix_Everything_1080p.mp4.part_ab + Fix_Everything_1080p.mp4.part_ac + Fix_Everything_1080p.mp4.part_ad + Fix_Everything_1080p.mp4.part_ae + Fix_Everything_1080p.mp4.part_af Fix_Everything_1080p.mp4"
 ```
+
+(In PowerShell, plain `copy` is a different command that rejects the `+` syntax; `cmd /c` runs the
+classic one. In the old Command Prompt, the same line works without `cmd /c "` and the closing `"`.)
 
 **Check it** (optional): the joined file's SHA-256 should be
 
@@ -21,7 +24,7 @@ copy /b Fix_Everything_1080p.mp4.part_aa + Fix_Everything_1080p.mp4.part_ab + Fi
 87c4fdf42206df3633bca0a5e993d81c17b5406dd95e24e83970ff5d22db9ab7
 ```
 
-Mac: `shasum -a 256 Fix_Everything_1080p.mp4` · Windows: `certutil -hashfile Fix_Everything_1080p.mp4 SHA256`
+Mac: `shasum -a 256 Fix_Everything_1080p.mp4` · Windows PowerShell: `Get-FileHash Fix_Everything_1080p.mp4`
 
 To rebuild the master from source instead: render the chapters with `video/tools/render_chapter.sh`,
 then run `video/tools/render_full.sh`.
