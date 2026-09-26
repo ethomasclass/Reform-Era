@@ -21,8 +21,9 @@ for (const id of ids) {
   console.log('checked', id, Math.ceil(composition.durationInFrames / nth), 'sampled frames,', counts[id] || 0, 'text boxes measured');
 }
 // Collapse repeats of the same text into one line with its frame range.
+// Text wholly outside the frame is never seen (e.g. a map label the camera has panned past); only partial cuts count.
 const seen = new Map();
-for (const h of hits) {
+for (const h of hits.filter((h) => h.r > 0 && h.l < 1920 && h.b > 0 && h.t < 1080)) {
   const k = h.id + '|' + h.text;
   const s = seen.get(k);
   if (!s) seen.set(k, {...h, f0: h.f, f1: h.f, maxOver: h.over});

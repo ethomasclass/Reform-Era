@@ -84,7 +84,7 @@ const Reformers: React.FC<{t: TL}> = ({t}) => {
       <Card src="img/ch01/mott_art.jpg" x={740} y={200} w={420} rot={2} at={t.at('raised') - 2} />
       <Note text="raised money" x={780} y={820} size={48} rot={-2} at={t.at('raised')} />
       <Card src="img/ch01/slavery_art.jpg" x={1340} y={220} w={420} rot={-2} at={t.at('speeches') - 2} />
-      <Note text="speeches against slavery" x={1300} y={820} size={48} rot={-2} at={t.at('speeches')} />
+      <Note text="speeches against slavery" x={1250} y={820} size={48} rot={-2} at={t.at('speeches')} />
       {g >= t.at('wait') && (
         <>
           <div style={{position: 'absolute', inset: 0, background: 'rgba(10,9,7,0.72)'}} />
@@ -151,7 +151,7 @@ const Seneca: React.FC<{t: TL}> = ({t}) => {
       {g >= t.at('1848') && <Highlight text="1848" x={100} y={90} size={110} at={t.at('1848')} seed={713} />}
       {g >= t.at('Seneca') - 2 && <div style={{position: 'absolute', left: px - 13, top: py - 13, width: 26, height: 26, borderRadius: '50%', background: pal.mark, border: `4px solid ${INK}`}} />}
       {g >= t.at('Seneca') && <Highlight text="SENECA FALLS, N.Y." x={px - 280} y={py + 40} size={72} at={t.at('Seneca')} seed={715} rot={-2} />}
-      <Note text="...also in the Burned-Over District" x={1000} y={880} size={52} rot={-3} at={t.at('yep')} />
+      <Note text="...also in the Burned-Over District" x={920} y={880} size={52} rot={-3} at={t.at('yep')} />
       <Tag text="Mitchell's Map of the United States, 1836 · Library of Congress" />
     </AbsoluteFill>
   );

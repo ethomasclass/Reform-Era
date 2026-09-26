@@ -247,7 +247,7 @@ const Worked: React.FC<{t: TL}> = ({t}) => {
       <Note text="behavior changes" x={1240} y={575} size={42} rot={-2} at={t.at('behavior')} />
       <Note text="in American history" x={1260} y={630} size={42} rot={-2} at={t.at('history')} />
       <Card src="img/ch05/member_cert_art.jpg" x={1420} y={700} w={270} rot={4} at={t.at('signing') - 2} />
-      <Note text="...it started with a piece of paper." x={300} y={960} size={56} rot={-2} at={paper - 4} color={boxOf(pal)} />
+      <Note text="...it started with a piece of paper." x={300} y={930} size={56} rot={-2} at={paper - 4} color={boxOf(pal)} />
       <Tag text="Data: Rorabaugh, The Alcoholic Republic · gallons of pure alcohol per person 15+" y={1030} x={1080} />
     </AbsoluteFill>
   );

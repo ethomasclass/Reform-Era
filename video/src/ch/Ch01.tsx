@@ -154,7 +154,7 @@ const Wall: React.FC<{t: ReturnType<typeof makeTimeline>}> = ({t}) => {
           </div>
         );
       })}
-      <Note text="...and everybody was sure theirs would save the nation" x={250} y={985} size={46} rot={-2} at={t.at('everybody was')} dur={16} />
+      <Note text="...and everybody was sure theirs would save the nation" x={250} y={940} size={46} rot={-2} at={t.at('everybody was')} dur={16} />
     </AbsoluteFill>
   );
 };

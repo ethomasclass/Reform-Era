@@ -112,7 +112,8 @@ const Difference: React.FC<{t: TL}> = ({t}) => {
       <Note text="change their habits." x={190} y={510} size={70} rot={-3} at={t.at('habits')} />
       {g >= a && <Highlight text="ABOLITION" x={1060} y={260} size={76} at={a} seed={1109} />}
       <Note text="asked them to give up" x={1080} y={420} size={56} rot={-3} at={t.at('give up')} color={CREAM} />
-      <Note text="an entire economic system." x={1090} y={510} size={70} rot={-3} at={t.at('economic')} color={CORAL} />
+      <Note text="an entire" x={1090} y={510} size={70} rot={-3} at={t.at('entire')} color={CORAL} />
+      <Note text="economic system." x={1100} y={600} size={70} rot={-3} at={t.at('economic')} color={CORAL} />
     </AbsoluteFill>
   );
 };

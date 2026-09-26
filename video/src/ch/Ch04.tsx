@@ -275,7 +275,7 @@ const Fake: React.FC<{t: TL}> = ({t}) => {
       <DarkPaper />
       <Card src="img/ch04/monk_title.jpg" x={140} y={140} w={520} rot={-3} at={t.at('There was')} filter="grayscale(1) contrast(1.3) brightness(1.1)" />
       <Note text="just one problem..." x={700} y={110} size={60} rot={-3} at={t.at('one problem')} />
-      {g >= f0 && <Stamp text="FAKE" x={170} y={430} at={f0} rot={-14} size={190} />}
+      {g >= f0 && <Stamp text="FAKE" x={240} y={430} at={f0} rot={-14} size={190} />}
       <Card src="img/ch04/exposure.jpg" x={1510} y={520} w={340} rot={4} at={t.at('Investigators')} filter="grayscale(1) contrast(1.2)" />
       <Note text="investigators found nothing" x={720} y={260} size={52} rot={-2} at={t.at('Investigators')} />
       <Note text="her own mother: she never lived there" x={720} y={380} size={48} rot={-2} at={t.at('mother')} />

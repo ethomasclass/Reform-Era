@@ -139,7 +139,7 @@ const Seances: React.FC<{t: TL}> = ({t}) => {
       <Card src="img/ch03/barnum_art.jpg" x={880} y={80} w={430} rot={3} at={t.at('P.T.') - 1} />
       <Card src="img/ch03/barnum_museum.jpg" x={1300} y={420} w={560} rot={-4} at={t.at('display') - 4} filter="grayscale(1) contrast(1.15)" />
       {g >= t.at('Barnum') && g < sp && <Highlight text="P.T. BARNUM" x={860} y={620} size={80} at={t.at('Barnum')} seed={211} rot={-3} />}
-      <Note text="on display in New York City" x={1180} y={960} size={50} rot={-3} at={t.at('display')} out={sp} />
+      <Note text="on display in New York City" x={1120} y={940} size={50} rot={-3} at={t.at('display')} out={sp} />
       {g >= sp && (
         <>
           <div style={{position: 'absolute', inset: 0, background: 'rgba(10,9,7,0.6)'}} />
@@ -176,7 +176,7 @@ const War: React.FC<{t: TL}> = ({t}) => {
       <Card src="img/ch03/soldier2_art.jpg" x={740} y={450} w={400} rot={2} at={t.at('hundreds')} />
       <Card src="img/ch03/soldier3_art.jpg" x={1280} y={470} w={520} rot={-3} at={t.at('young men') - 2} />
       <Note text="hundreds of thousands of young men" x={180} y={960} size={52} rot={-2} at={t.at('hundreds')} out={t.at('Millions')} />
-      <Note text="millions of grieving families" x={260} y={960} size={60} rot={-3} at={t.at('Millions')} out={t.at('explodes')} />
+      <Note text="millions of grieving families" x={260} y={920} size={60} rot={-3} at={t.at('Millions')} out={t.at('explodes')} />
       {g >= t.at('explodes') && <Highlight text="SPIRITUALISM EXPLODES" x={420} y={900} size={96} at={t.at('explodes')} seed={217} rot={-2} />}
       <Tag text="Civil War tintypes and cartes de visite · Library of Congress" y={40} />
     </AbsoluteFill>
