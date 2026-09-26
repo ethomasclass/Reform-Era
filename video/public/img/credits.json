@@ -1,520 +1,606 @@
 {
- "test/dix.jpg": {
-  "title": "File:NPG 77 261 det Dix.jpg",
-  "artist": "Unidentified Artist",
-  "date": "1849date QS:P571,+1849-00-00T00:00:00Z/9",
-  "licence": "CC0",
-  "page": "https://commons.wikimedia.org/wiki/File:NPG_77_261_det_Dix.jpg"
- },
- "test/drunkards_progress.jpg": {
-  "title": "The drunkards progress. From the first glass to the grave / lith. & pub. by N. Currier.",
-  "artist": "N. Currier (Firm)",
-  "date": "1846-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/91796265/",
-  "source": "loc:91796265"
- },
- "test/walker_p1.jpg": {
-  "title": "Walker's appeal, in four articles, : together with a preamble to the colored citizens of the world, but in particular and very expressly to those of the United States of America. Written in Boston, in the state of Massachusetts, Sept. 28th, 1829 (page 2)",
-  "artist": "Walker, David, 1785-1830",
-  "date": "1829",
-  "licence": "public domain by age (1829)",
-  "page": "https://archive.org/details/walkersappealinf1829walk/page/n2",
-  "source": "iabook:walkersappealinf1829walk:2"
- },
- "test/dix_title.jpg": {
-  "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 4)",
-  "artist": "Dix, Dorothea Lynde, 1802-1887",
-  "date": "1904",
-  "licence": "public domain by age (1904)",
-  "page": "https://archive.org/details/memorialtolegisl00dixd/page/n4",
-  "source": "iabook:memorialtolegisl00dixd:4"
- },
- "test/dix_p2.jpg": {
-  "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 5)",
-  "artist": "Dix, Dorothea Lynde, 1802-1887",
-  "date": "1904",
-  "licence": "public domain by age (1904)",
-  "page": "https://archive.org/details/memorialtolegisl00dixd/page/n5",
-  "source": "iabook:memorialtolegisl00dixd:5"
- },
- "test/brig.jpg": {
-  "title": "Brig on the Water",
-  "artist": "Gustave Le Gray",
-  "date": "1856",
-  "licence": "CC0 (The Met Open Access)",
-  "page": "https://www.metmuseum.org/art/collection/search/261937",
-  "source": "met:261937"
- },
- "jh/camp_meeting.jpg": {
-  "title": "Camp-meeting / A. Rider pinxit ; drawn on stone by H. Bridport.",
-  "artist": "Bridport, Hugh, 1794-approximately 1868, lithographer, Rider, Alexander, active 1810-1834, artist, Kennedy & Lucas's Lithography, publisher",
-  "date": "1829-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/96510018/",
-  "source": "loc:96510018"
- },
- "jh/camp_meeting_1819.jpg": {
-  "title": "Camp meeting of the Methodists in N. America / J. Milbert del. ; M. Dubourg sculp.",
-  "artist": "Dubourg, M., engraver, Milbert, Jacques G\u00e9rard, 1766-1840, artist",
-  "date": "1819-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/98508274/",
-  "source": "loc:98508274"
- },
- "img/jh/mitchell_1836.jpg": {
-  "file": "public/img/jh/mitchell_1836.jpg",
-  "title": "Mitchell's map of the United States, 1836",
-  "source": "https://www.loc.gov/item/87692342/",
-  "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
- },
- "ch01/prison.jpg": {
-  "title": "Eastern penitentiary of Pennsylvania, near Philadelphia / from nature & on stone by G. Lehman ; Childs & Inman lithrs.",
-  "artist": "Childs & Inman, lithographer, Lehman, George, -1870, artist, Childs & Lehman, publisher",
-  "date": "1833-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2014648406/",
-  "source": "loc:2014648406"
- },
- "ch01/school.jpg": {
-  "title": "School house, Tappan / painted by Robert W. Weir ; engraved on steel by James Smillie.",
-  "artist": "Smillie, James, 1807-1885, engraver, Weir, Robert Walter, 1803-1889, artist, Neale, John, printer",
-  "date": "1840-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2012648931/",
-  "source": "loc:2012648931"
- },
- "ch01/marriage.jpg": {
-  "title": "The day before marriage",
-  "artist": "N. Currier (Firm)",
-  "date": "1847-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/91791067/",
-  "source": "loc:91791067"
- },
- "ch01/slavery.jpg": {
-  "title": "Am I not a man and a brother?",
-  "artist": "American Anti-Slavery Society., Anti-Slavery Office (New York, N.Y,)",
-  "date": "1837-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2008661312/",
-  "source": "loc:2008661312"
- },
- "ch01/mott.jpg": {
-  "title": "File:Lucretia Mott by Joseph Kyle.jpg",
-  "artist": "APK",
-  "date": "2026-07-08 12:30:54",
-  "licence": "CC BY 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Lucretia_Mott_by_Joseph_Kyle.jpg"
- },
- "ch02/finney.jpg": {
-  "title": "File:Charles Grandison Finney.jpg",
-  "artist": "Unknown authorUnknown author",
-  "date": "1850",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Charles_Grandison_Finney.jpg"
- },
- "ch02/puritans.jpg": {
-  "title": "File:Puritans going to church) - G.H. Boughton '84 LCCN2006678318.jpg",
-  "artist": "Appleton, Thomas Gold, 1812-1884, engraver; Boughton, George Henry, 1834-1905, artist",
-  "date": "1885",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Puritans_going_to_church)_-_G.H._Boughton_%2784_LCCN2006678318.jpg"
- },
- "ch02/finney_sig.png": {
-  "title": "File:Signature of Charles G. Finney.png",
-  "artist": "H. B. Hall and Sons",
-  "date": "1876",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Signature_of_Charles_G._Finney.png"
- },
- "ch03/fox_sisters.jpg": {
-  "title": "File:Fox sisters 1852.jpg",
-  "artist": "Lithograph after a daguerreotype by Appleby. Published by N. Currier, New York.",
-  "date": "1852",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Fox_sisters_1852.jpg"
- },
- "ch03/barnum_museum.jpg": {
-  "title": "File:Barnum's American Museum, New York City.tiff",
-  "artist": "Gleason\u2019s Pictorial Vol. 4 No. 5 (January 29, 1853):72. Drawn by Chapin. Engraved by Avery.",
-  "date": "published:1853",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Barnum%27s_American_Museum,_New_York_City.tiff"
- },
- "ch03/barnum.jpg": {
-  "title": "P.T. Barnum",
-  "artist": "",
-  "date": "1855",
-  "licence": "No known restrictions on publication. For information, see \"Brady-Handy photograph collection,\" https://www.loc.gov/rr/print/res/389_bhan.html",
-  "page": "https://www.loc.gov/item/2017896468/",
-  "source": "loc:2017896468"
- },
- "ch03/mary_lincoln.jpg": {
-  "title": "Mrs. Abraham Lincoln",
-  "artist": "",
-  "date": "1961",
-  "licence": "No known restrictions on publication. For information, see \"Brady-Handy photograph collection,\" https://www.loc.gov/rr/print/res/389_bhan.html",
-  "page": "https://www.loc.gov/item/2017896161/",
-  "source": "loc:2017896161"
- },
- "ch03/brigham_young.jpg": {
-  "title": "File:1853 Brigham Young Daguerreotype.jpg",
-  "artist": "Marsena Cannon",
-  "date": "1853-01-01",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:1853_Brigham_Young_Daguerreotype.jpg"
- },
- "ch03/soldier1.jpg": {
-  "title": "[Unidentified young soldier in Union frock coat with bayoneted musket next to unidentified young girl standing on chair; probably siblings]",
-  "artist": "",
-  "date": "1861-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2010650772/",
-  "source": "loc:2010650772"
- },
- "ch03/soldier2.jpg": {
-  "title": "[Unidentified young African American soldier in Union uniform with regulation eagle buttons, seated, his finger pointed at an open book on a table with a young woman, probably a teacher, standing with her finger pointed at the book] / Doane, Charlestown ; R.N. Doane (sucessor to I. Bryant), 140 1/2 Main Street, Charlestown, Mass.",
-  "artist": "Doane, R. N. B. (Robert N. B.), photographer",
-  "date": "1860",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2023630593/",
-  "source": "loc:2023630593"
- },
- "ch03/bill_of_rights.jpg": {
-  "title": "File:Bill of Rights Pg1of1 AC.jpg",
-  "artist": "National Archives and Records Administration. Office of the Federal Register. 4/1/1985",
-  "date": "25 September 1789, 25 September 1789",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Bill_of_Rights_-_DPLA_-_a65f6d0b6210c18d17c596908ebcf270_(page_1).jpg"
- },
- "ch03/soldier3.jpg": {
-  "title": "[Unidentified soldier of 15th Pennsylvania Cavalry Regiment in uniform and unidentified young girl, probably his daughter]",
-  "artist": "",
-  "date": "1862",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2018648176/",
-  "source": "loc:2018648176"
- },
- "ch03/emigrants.jpg": {
-  "title": "[Four scenes of European emigrants in America] / W.J. Hennessey del.",
-  "artist": "Hennessy, William John, 1839-1917, artist",
-  "date": "1858-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/93501100/",
-  "source": "loc:93501100"
- },
- "ch03/bom.jpg": {
-  "title": "Book of Mormon Palmyra 1830 Edition (page 4)",
-  "artist": "VIctorian Vault",
-  "date": "1830",
-  "licence": "public domain by age (1830)",
-  "page": "https://archive.org/details/book-of-mormon-palmyra-1830-edition/page/n4",
-  "source": "iabook:book-of-mormon-palmyra-1830-edition:4"
- },
- "ch03/knockings.jpg": {
-  "title": "Rochester knockings! : discovery and explanation of the source of the phenomena generally known as the Rochester knockings (page 8)",
-  "artist": "['McManus-Young Collection (Library of Congress) DLC', 'Harry Houdini Collection (Library of Congress) DLC']",
-  "date": "1851",
-  "licence": "public domain by age (1851)",
-  "page": "https://archive.org/details/rochesterknockin00mcma/page/n8",
-  "source": "iabook:rochesterknockin00mcma:8"
- },
- "ch03/hydesville_front.jpg": {
-  "title": "Hydesville: the story of the Rochester knockings, which proclaimed the advent of modern spiritualism (page 7)",
-  "artist": "Todd, Thomas Olman",
-  "date": "1905",
-  "licence": "public domain by age (1905)",
-  "page": "https://archive.org/details/hydesvillestoryo00todd/page/n7",
-  "source": "iabook:hydesvillestoryo00todd:7"
- },
- "img/ch03/colton_1861.jpg": {
-  "title": "Colton's United States shewing the military stations, forts, &c, 1861",
-  "source": "https://www.loc.gov/item/99447014/",
-  "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
- },
- "ch03/gray288.png": {
-  "title": "File:Gray288.png",
-  "artist": "Henry Vandyke Carter",
-  "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Gray288.png"
- },
- "ch03/ballou.jpg": {
-  "title": "Biography of Rev. Hosea Ballou (page 5)",
-  "artist": "Ballou, Maturin Murray, 1820-1895",
-  "date": "1852",
-  "licence": "public domain by age (1852)",
-  "page": "https://archive.org/details/biographyofrevho00ball/page/n5",
-  "source": "iabook:biographyofrevho00ball:5"
- },
- "ch03/deathblow.jpg": {
-  "title": "The death-blow to spiritualism : being the true story of the Fox sisters, as revealed by authority of Margaret Fox Kane and Catherine Fox Jencken (page 4)",
-  "artist": "['Davenport, Reuben Briggs', 'Harry Houdini Collection (Library of Congress) DLC']",
-  "date": "1888",
-  "licence": "public domain by age (1888)",
-  "page": "https://archive.org/details/deathblowtospiri00dave/page/n4",
-  "source": "iabook:deathblowtospiri00dave:4"
- },
- "ch03/deathblow_sig.jpg": {
-  "title": "The death-blow to spiritualism : being the true story of the Fox sisters, as revealed by authority of Margaret Fox Kane and Catherine Fox Jencken (page 10)",
-  "artist": "['Davenport, Reuben Briggs', 'Harry Houdini Collection (Library of Congress) DLC']",
-  "date": "1888",
-  "licence": "public domain by age (1888)",
-  "page": "https://archive.org/details/deathblowtospiri00dave/page/n10",
-  "source": "iabook:deathblowtospiri00dave:10"
- },
- "ch03/fox_easterly.jpg": {
-  "title": "File:Kate and Maggie Fox, Spirit Mediums from Rochester, New York.jpg",
-  "artist": "Thomas Martin Easterly",
-  "date": "1852",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Kate_and_Maggie_Fox,_Spirit_Mediums_from_Rochester,_New_York.jpg"
- },
- "ch03/channing.jpg": {
-  "title": "File:Reverend William Ellery Channing by Gilbert Charles Stuart.JPG",
-  "artist": "Gilbert Stuart",
-  "date": "circa 1815date QS:P571,+1815-00-00T00:00:00Z/9,P1480,Q5727902",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Reverend_William_Ellery_Channing_by_Gilbert_Charles_Stuart.JPG"
- },
- "ch03/smith_maudsley.png": {
-  "title": "File:Joseph Smith Jr. Lieutenant General Nauvoo Legion by Sutcliffe Mauds-Ley -1842.png",
-  "artist": "Sutcliffe Maudsley",
-  "date": "1842",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Joseph_Smith_Jr._Lieutenant_General_Nauvoo_Legion_by_Sutcliffe_Mauds-Ley_-1842.png"
- },
- "ch03/carthage.jpg": {
-  "title": "File:G. W. Fasel - Charles G. Crehen - Nagel & Weingaertner - Martyrdom of Joseph and Hiram Smith in Carthage jail, June 27th, 1844.jpg",
-  "artist": "Painter: G.W. Fasel\nLithographer: Charles G. Crehen, (1829-?)\nPublisher: Nagel &amp; Weingaertner, N.Y.",
-  "date": "circa 1851date QS:P,+1851-00-00T00:00:00Z/9,P1480,Q5727902",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:G._W._Fasel_-_Charles_G._Crehen_-_Nagel_%26_Weingaertner_-_Martyrdom_of_Joseph_and_Hiram_Smith_in_Carthage_jail,_June_27th,_1844.jpg"
- },
- "ch03/gray287.png": {
-  "title": "File:Gray287.png",
-  "artist": "Henry Vandyke Carter",
-  "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Gray287.png"
- },
- "ch03/gray289.png": {
-  "title": "File:Gray289.png",
-  "artist": "Henry Vandyke Carter",
-  "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Gray289.png"
- },
- "ch03/gray290.png": {
-  "title": "File:Gray290.png",
-  "artist": "Henry Vandyke Carter",
-  "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Gray290.png"
- },
- "ch03/gray292.png": {
-  "title": "File:Gray292.png",
-  "artist": "Henry Vandyke Carter",
-  "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Gray292.png"
- },
- "ch04/kn_soap.jpg": {
-  "title": "Know nothing soap",
-  "artist": "Geo. A. Hill & Co., L.H. Bradford & Co.",
-  "date": "1854-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2008661571/",
-  "source": "loc:2008661571"
- },
- "ch04/kn_polka.jpg": {
-  "title": "Know Nothing Polka dedicated to everybody by nobody",
-  "artist": "Couenhaven, James.",
-  "date": "1854-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2008661569/",
-  "source": "loc:2008661569"
- },
- "ch04/propagation.jpg": {
-  "title": "The Propagation Society. More free than welcome",
-  "artist": "N. Currier (Firm)",
-  "date": "1855-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2003656589/",
-  "source": "loc:2003656589"
- },
- "ch04/bridget.jpg": {
-  "title": "File:Irish potato famine Bridget O'Donnel.jpg",
-  "artist": "Illustrated London News, December 22, 1849",
-  "date": "1849-12-22",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Irish_potato_famine_Bridget_O%27Donnel.jpg"
- },
- "ch04/convent_ruins.jpg": {
-  "title": "File:Ruins of Ursuline Convent 1834 Riots.jpg",
-  "artist": "unidentified artist, historical print",
-  "date": "1834",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_Ursuline_Convent_1834_Riots.jpg"
- },
- "ch04/emigrant_ship.jpg": {
-  "title": "Quarter-deck of an emigrant ship - the roll call",
-  "artist": "",
-  "date": "1850-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2003670834/",
-  "source": "loc:2003670834"
- },
- "ch04/five_points.jpg": {
-  "title": "File:Five Points - George Catlin - 1827.jpg",
-  "artist": "George Catlin",
-  "date": "1827date QS:P571,+1827-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Five_Points_-_George_Catlin_-_1827.jpg"
- },
- "ch04/monk_cover.jpg": {
-  "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 1)",
-  "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
-  "date": "1836",
-  "licence": "public domain by age (1836)",
-  "page": "https://archive.org/details/cihm_38888/page/n1",
-  "source": "iabook:cihm_38888:1"
- },
- "ch04/monk_title.jpg": {
-  "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 3)",
-  "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
-  "date": "1836",
-  "licence": "public domain by age (1836)",
-  "page": "https://archive.org/details/cihm_38888/page/n3",
-  "source": "iabook:cihm_38888:3"
- },
- "ch04/exposure.jpg": {
-  "title": "Awful exposure of the atrocious plot formed by certain individuals against the clergy and nuns of Lower Canada, through the intervention of Maria Monk [microform] : with an authentic narrative of her life, from her birth to the present moment, and an account of her impositions, etc (page 1)",
-  "artist": "Jones, J",
-  "date": "1836",
-  "licence": "public domain by age (1836)",
-  "page": "https://archive.org/details/cihm_27925/page/n1",
-  "source": "iabook:cihm_27925:1"
- },
- "ch04/citizen_kn.jpg": {
-  "title": "File:Citizen Know Nothing.jpg",
-  "artist": "Sarony &amp; Co., lithographer",
-  "date": "1854",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Citizen_Know_Nothing.jpg"
- },
- "ch04/irish_leaving.jpg": {
-  "title": "Irish emigrants leaving their home for America--the mail coach from Cahirciveen, County Kerry, Ireland",
-  "artist": "",
-  "date": "1866-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2001697359/",
-  "source": "loc:2001697359"
- },
- "ch04/emigrant_map.jpg": {
-  "title": "File:Emigrant's Map and Guide for Routes to North America WDL41.png",
-  "artist": "Zimmermann, Gotthelf",
-  "date": "1853date QS:P571,+1853-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Emigrant%27s_Map_and_Guide_for_Routes_to_North_America_WDL41.png"
- },
- "ch05/family_pledge.jpg": {
-  "title": "Temperance tabula and family pledge",
-  "artist": "",
-  "date": "1848-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2003671478/",
-  "source": "loc:2003671478"
- },
- "ch05/member_cert.jpg": {
-  "title": "This is to certify that ... was duly elected a member of the above society on the ... day of ... 184-, and the pledge having been in due form administered to him he signed the same / Sinclair Lithr. Phila.",
-  "artist": "Sinclair, Thomas S., approximately 1805-1881, lithographer",
-  "date": "1841-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/97503997/",
-  "source": "loc:97503997"
- },
- "ch05/tree_intemperance.jpg": {
-  "title": "Tree of intemperance / [Archibald] Macbrairs, lith.",
-  "artist": "Macbrair, Archibald, lithographer",
-  "date": "1855-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2003689279/",
-  "source": "loc:2003689279"
- },
- "ch05/county_election.jpg": {
-  "title": "File:George Caleb Bingham - The County Election - 44-2001 - Saint Louis Art Museum.jpg",
-  "artist": "George Caleb Bingham",
-  "date": "1852date QS:P571,+1852-00-00T00:00:00Z/9",
-  "licence": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:George_Caleb_Bingham_-_The_County_Election_-_44-2001_-_Saint_Louis_Art_Museum.jpg"
- },
- "ch05/beecher.jpg": {
-  "title": "[Lyman Beecher, half-length portrait, facing front]",
-  "artist": "Brady, Mathew B., approximately 1823-1896.",
-  "date": "1845",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2004664099/",
-  "source": "loc:2004664099"
- },
- "img/ch05/lowell.jpg": {
-  "title": "View of Lowell, Massachusetts, 1840s",
-  "source": "https://www.loc.gov/item/94515606/",
-  "licence": "No known restrictions on publication."
- },
- "img/ch06/trenton.jpg": {
-  "title": "New Jersey State Lunatic Asylum, Trenton, engraving by J.J. Pease after J.X. Mason, 1840s-50s",
-  "source": "https://commons.wikimedia.org/wiki/File:New_Jersey_state_lunatic_asylum,_Trenton_-_Engraving.jpg",
-  "licence": "Public domain"
- },
- "ch07/mann.jpg": {
-  "title": "[Horace Mann, head-and-shoulders portrait, three-quarters to right]",
-  "artist": "Brady, Mathew B., approximately 1823-1896.",
-  "date": "1844-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2004664022/",
-  "source": "loc:2004664022"
- },
- "ch07/riot1844.jpg": {
-  "title": "Riot in Philadelphia, June [i.e. July] 7th 1844 / H. Bucholzer.",
-  "artist": "Bucholzer, H., artist",
-  "date": "1844-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2003654121/",
-  "source": "loc:2003654121"
- },
- "img/ch07/country_school.jpg": {
-  "title": "Winslow_Homer_-_Country_School.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Country_School.jpg",
-  "licence": "Public domain (Wikimedia Commons)"
- },
- "ch07/nooning.jpg": {
-  "title": "[Farmers nooning, from the original picture in the possession of Jona. Sturges Esqr.] / Wm. S. Mount 1836.",
-  "artist": "Jones, Alfred, 1819-1900, engraver, Mount, William Sidney, 1807-1868, artist, Apollo Association for the Promotion of the Fine Arts in the United States, funder",
-  "date": "1843-01-01",
-  "licence": "No known restrictions on publication.",
-  "page": "https://www.loc.gov/item/2011645778/",
-  "source": "loc:2011645778"
- },
- "img/ch08/sf_report.jpg": {
-  "title": "Report of the Woman's Rights Convention, held at Seneca Falls, N.Y., July 19th & 20th, 1848 (title page)",
-  "source": "https://www.loc.gov/item/2005683539/",
-  "licence": "Public domain by age (published 1848); LOC rights not evaluated"
- },
- "img/ch08/declaration.jpg": {
-  "title": "Declaration of Independence, 1823 William J. Stone facsimile",
-  "source": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
-  "licence": "Public domain"
- },
- "img/ch08/douglass.jpg": {
-  "title": "Samuel_J._Miller_-_Frederick_Douglass_-_Google_Art_Project.jpg",
-  "source": "https://commons.wikimedia.org/wiki/File:Samuel_J._Miller_-_Frederick_Douglass_-_Google_Art_Project.jpg",
-  "licence": "Public domain (Wikimedia Commons)"
- },
- "img/ch08/stanton.jpg": {
-  "title": "Elizabeth Cady Stanton, 1848 (daguerreotype)",
-  "source": "https://commons.wikimedia.org/wiki/File:ElizabethCadyStanton-1848-Daniel-Henry.jpg",
-  "licence": "Public domain"
- }
+  "test/dix.jpg": {
+    "title": "File:NPG 77 261 det Dix.jpg",
+    "artist": "Unidentified Artist",
+    "date": "1849date QS:P571,+1849-00-00T00:00:00Z/9",
+    "licence": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:NPG_77_261_det_Dix.jpg"
+  },
+  "test/drunkards_progress.jpg": {
+    "title": "The drunkards progress. From the first glass to the grave / lith. & pub. by N. Currier.",
+    "artist": "N. Currier (Firm)",
+    "date": "1846-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/91796265/",
+    "source": "loc:91796265"
+  },
+  "test/walker_p1.jpg": {
+    "title": "Walker's appeal, in four articles, : together with a preamble to the colored citizens of the world, but in particular and very expressly to those of the United States of America. Written in Boston, in the state of Massachusetts, Sept. 28th, 1829 (page 2)",
+    "artist": "Walker, David, 1785-1830",
+    "date": "1829",
+    "licence": "public domain by age (1829)",
+    "page": "https://archive.org/details/walkersappealinf1829walk/page/n2",
+    "source": "iabook:walkersappealinf1829walk:2"
+  },
+  "test/dix_title.jpg": {
+    "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 4)",
+    "artist": "Dix, Dorothea Lynde, 1802-1887",
+    "date": "1904",
+    "licence": "public domain by age (1904)",
+    "page": "https://archive.org/details/memorialtolegisl00dixd/page/n4",
+    "source": "iabook:memorialtolegisl00dixd:4"
+  },
+  "test/dix_p2.jpg": {
+    "title": "Memorial to the legislature of Massachusetts, 1843. By Dorothea L. Dix (page 5)",
+    "artist": "Dix, Dorothea Lynde, 1802-1887",
+    "date": "1904",
+    "licence": "public domain by age (1904)",
+    "page": "https://archive.org/details/memorialtolegisl00dixd/page/n5",
+    "source": "iabook:memorialtolegisl00dixd:5"
+  },
+  "test/brig.jpg": {
+    "title": "Brig on the Water",
+    "artist": "Gustave Le Gray",
+    "date": "1856",
+    "licence": "CC0 (The Met Open Access)",
+    "page": "https://www.metmuseum.org/art/collection/search/261937",
+    "source": "met:261937"
+  },
+  "jh/camp_meeting.jpg": {
+    "title": "Camp-meeting / A. Rider pinxit ; drawn on stone by H. Bridport.",
+    "artist": "Bridport, Hugh, 1794-approximately 1868, lithographer, Rider, Alexander, active 1810-1834, artist, Kennedy & Lucas's Lithography, publisher",
+    "date": "1829-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/96510018/",
+    "source": "loc:96510018"
+  },
+  "jh/camp_meeting_1819.jpg": {
+    "title": "Camp meeting of the Methodists in N. America / J. Milbert del. ; M. Dubourg sculp.",
+    "artist": "Dubourg, M., engraver, Milbert, Jacques G\u00e9rard, 1766-1840, artist",
+    "date": "1819-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/98508274/",
+    "source": "loc:98508274"
+  },
+  "img/jh/mitchell_1836.jpg": {
+    "file": "public/img/jh/mitchell_1836.jpg",
+    "title": "Mitchell's map of the United States, 1836",
+    "source": "https://www.loc.gov/item/87692342/",
+    "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
+  },
+  "ch01/prison.jpg": {
+    "title": "Eastern penitentiary of Pennsylvania, near Philadelphia / from nature & on stone by G. Lehman ; Childs & Inman lithrs.",
+    "artist": "Childs & Inman, lithographer, Lehman, George, -1870, artist, Childs & Lehman, publisher",
+    "date": "1833-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2014648406/",
+    "source": "loc:2014648406"
+  },
+  "ch01/school.jpg": {
+    "title": "School house, Tappan / painted by Robert W. Weir ; engraved on steel by James Smillie.",
+    "artist": "Smillie, James, 1807-1885, engraver, Weir, Robert Walter, 1803-1889, artist, Neale, John, printer",
+    "date": "1840-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2012648931/",
+    "source": "loc:2012648931"
+  },
+  "ch01/marriage.jpg": {
+    "title": "The day before marriage",
+    "artist": "N. Currier (Firm)",
+    "date": "1847-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/91791067/",
+    "source": "loc:91791067"
+  },
+  "ch01/slavery.jpg": {
+    "title": "Am I not a man and a brother?",
+    "artist": "American Anti-Slavery Society., Anti-Slavery Office (New York, N.Y,)",
+    "date": "1837-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661312/",
+    "source": "loc:2008661312"
+  },
+  "ch01/mott.jpg": {
+    "title": "File:Lucretia Mott by Joseph Kyle.jpg",
+    "artist": "APK",
+    "date": "2026-07-08 12:30:54",
+    "licence": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lucretia_Mott_by_Joseph_Kyle.jpg"
+  },
+  "ch02/finney.jpg": {
+    "title": "File:Charles Grandison Finney.jpg",
+    "artist": "Unknown authorUnknown author",
+    "date": "1850",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Charles_Grandison_Finney.jpg"
+  },
+  "ch02/puritans.jpg": {
+    "title": "File:Puritans going to church) - G.H. Boughton '84 LCCN2006678318.jpg",
+    "artist": "Appleton, Thomas Gold, 1812-1884, engraver; Boughton, George Henry, 1834-1905, artist",
+    "date": "1885",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Puritans_going_to_church)_-_G.H._Boughton_%2784_LCCN2006678318.jpg"
+  },
+  "ch02/finney_sig.png": {
+    "title": "File:Signature of Charles G. Finney.png",
+    "artist": "H. B. Hall and Sons",
+    "date": "1876",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Signature_of_Charles_G._Finney.png"
+  },
+  "ch03/fox_sisters.jpg": {
+    "title": "File:Fox sisters 1852.jpg",
+    "artist": "Lithograph after a daguerreotype by Appleby. Published by N. Currier, New York.",
+    "date": "1852",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Fox_sisters_1852.jpg"
+  },
+  "ch03/barnum_museum.jpg": {
+    "title": "File:Barnum's American Museum, New York City.tiff",
+    "artist": "Gleason\u2019s Pictorial Vol. 4 No. 5 (January 29, 1853):72. Drawn by Chapin. Engraved by Avery.",
+    "date": "published:1853",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Barnum%27s_American_Museum,_New_York_City.tiff"
+  },
+  "ch03/barnum.jpg": {
+    "title": "P.T. Barnum",
+    "artist": "",
+    "date": "1855",
+    "licence": "No known restrictions on publication. For information, see \"Brady-Handy photograph collection,\" https://www.loc.gov/rr/print/res/389_bhan.html",
+    "page": "https://www.loc.gov/item/2017896468/",
+    "source": "loc:2017896468"
+  },
+  "ch03/mary_lincoln.jpg": {
+    "title": "Mrs. Abraham Lincoln",
+    "artist": "",
+    "date": "1961",
+    "licence": "No known restrictions on publication. For information, see \"Brady-Handy photograph collection,\" https://www.loc.gov/rr/print/res/389_bhan.html",
+    "page": "https://www.loc.gov/item/2017896161/",
+    "source": "loc:2017896161"
+  },
+  "ch03/brigham_young.jpg": {
+    "title": "File:1853 Brigham Young Daguerreotype.jpg",
+    "artist": "Marsena Cannon",
+    "date": "1853-01-01",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:1853_Brigham_Young_Daguerreotype.jpg"
+  },
+  "ch03/soldier1.jpg": {
+    "title": "[Unidentified young soldier in Union frock coat with bayoneted musket next to unidentified young girl standing on chair; probably siblings]",
+    "artist": "",
+    "date": "1861-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2010650772/",
+    "source": "loc:2010650772"
+  },
+  "ch03/soldier2.jpg": {
+    "title": "[Unidentified young African American soldier in Union uniform with regulation eagle buttons, seated, his finger pointed at an open book on a table with a young woman, probably a teacher, standing with her finger pointed at the book] / Doane, Charlestown ; R.N. Doane (sucessor to I. Bryant), 140 1/2 Main Street, Charlestown, Mass.",
+    "artist": "Doane, R. N. B. (Robert N. B.), photographer",
+    "date": "1860",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2023630593/",
+    "source": "loc:2023630593"
+  },
+  "ch03/bill_of_rights.jpg": {
+    "title": "File:Bill of Rights Pg1of1 AC.jpg",
+    "artist": "National Archives and Records Administration. Office of the Federal Register. 4/1/1985",
+    "date": "25 September 1789, 25 September 1789",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Bill_of_Rights_-_DPLA_-_a65f6d0b6210c18d17c596908ebcf270_(page_1).jpg"
+  },
+  "ch03/soldier3.jpg": {
+    "title": "[Unidentified soldier of 15th Pennsylvania Cavalry Regiment in uniform and unidentified young girl, probably his daughter]",
+    "artist": "",
+    "date": "1862",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2018648176/",
+    "source": "loc:2018648176"
+  },
+  "ch03/emigrants.jpg": {
+    "title": "[Four scenes of European emigrants in America] / W.J. Hennessey del.",
+    "artist": "Hennessy, William John, 1839-1917, artist",
+    "date": "1858-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/93501100/",
+    "source": "loc:93501100"
+  },
+  "ch03/bom.jpg": {
+    "title": "Book of Mormon Palmyra 1830 Edition (page 4)",
+    "artist": "VIctorian Vault",
+    "date": "1830",
+    "licence": "public domain by age (1830)",
+    "page": "https://archive.org/details/book-of-mormon-palmyra-1830-edition/page/n4",
+    "source": "iabook:book-of-mormon-palmyra-1830-edition:4"
+  },
+  "ch03/knockings.jpg": {
+    "title": "Rochester knockings! : discovery and explanation of the source of the phenomena generally known as the Rochester knockings (page 8)",
+    "artist": "['McManus-Young Collection (Library of Congress) DLC', 'Harry Houdini Collection (Library of Congress) DLC']",
+    "date": "1851",
+    "licence": "public domain by age (1851)",
+    "page": "https://archive.org/details/rochesterknockin00mcma/page/n8",
+    "source": "iabook:rochesterknockin00mcma:8"
+  },
+  "ch03/hydesville_front.jpg": {
+    "title": "Hydesville: the story of the Rochester knockings, which proclaimed the advent of modern spiritualism (page 7)",
+    "artist": "Todd, Thomas Olman",
+    "date": "1905",
+    "licence": "public domain by age (1905)",
+    "page": "https://archive.org/details/hydesvillestoryo00todd/page/n7",
+    "source": "iabook:hydesvillestoryo00todd:7"
+  },
+  "img/ch03/colton_1861.jpg": {
+    "title": "Colton's United States shewing the military stations, forts, &c, 1861",
+    "source": "https://www.loc.gov/item/99447014/",
+    "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
+  },
+  "ch03/gray288.png": {
+    "title": "File:Gray288.png",
+    "artist": "Henry Vandyke Carter",
+    "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Gray288.png"
+  },
+  "ch03/ballou.jpg": {
+    "title": "Biography of Rev. Hosea Ballou (page 5)",
+    "artist": "Ballou, Maturin Murray, 1820-1895",
+    "date": "1852",
+    "licence": "public domain by age (1852)",
+    "page": "https://archive.org/details/biographyofrevho00ball/page/n5",
+    "source": "iabook:biographyofrevho00ball:5"
+  },
+  "ch03/deathblow.jpg": {
+    "title": "The death-blow to spiritualism : being the true story of the Fox sisters, as revealed by authority of Margaret Fox Kane and Catherine Fox Jencken (page 4)",
+    "artist": "['Davenport, Reuben Briggs', 'Harry Houdini Collection (Library of Congress) DLC']",
+    "date": "1888",
+    "licence": "public domain by age (1888)",
+    "page": "https://archive.org/details/deathblowtospiri00dave/page/n4",
+    "source": "iabook:deathblowtospiri00dave:4"
+  },
+  "ch03/deathblow_sig.jpg": {
+    "title": "The death-blow to spiritualism : being the true story of the Fox sisters, as revealed by authority of Margaret Fox Kane and Catherine Fox Jencken (page 10)",
+    "artist": "['Davenport, Reuben Briggs', 'Harry Houdini Collection (Library of Congress) DLC']",
+    "date": "1888",
+    "licence": "public domain by age (1888)",
+    "page": "https://archive.org/details/deathblowtospiri00dave/page/n10",
+    "source": "iabook:deathblowtospiri00dave:10"
+  },
+  "ch03/fox_easterly.jpg": {
+    "title": "File:Kate and Maggie Fox, Spirit Mediums from Rochester, New York.jpg",
+    "artist": "Thomas Martin Easterly",
+    "date": "1852",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Kate_and_Maggie_Fox,_Spirit_Mediums_from_Rochester,_New_York.jpg"
+  },
+  "ch03/channing.jpg": {
+    "title": "File:Reverend William Ellery Channing by Gilbert Charles Stuart.JPG",
+    "artist": "Gilbert Stuart",
+    "date": "circa 1815date QS:P571,+1815-00-00T00:00:00Z/9,P1480,Q5727902",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Reverend_William_Ellery_Channing_by_Gilbert_Charles_Stuart.JPG"
+  },
+  "ch03/smith_maudsley.png": {
+    "title": "File:Joseph Smith Jr. Lieutenant General Nauvoo Legion by Sutcliffe Mauds-Ley -1842.png",
+    "artist": "Sutcliffe Maudsley",
+    "date": "1842",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Joseph_Smith_Jr._Lieutenant_General_Nauvoo_Legion_by_Sutcliffe_Mauds-Ley_-1842.png"
+  },
+  "ch03/carthage.jpg": {
+    "title": "File:G. W. Fasel - Charles G. Crehen - Nagel & Weingaertner - Martyrdom of Joseph and Hiram Smith in Carthage jail, June 27th, 1844.jpg",
+    "artist": "Painter: G.W. Fasel\nLithographer: Charles G. Crehen, (1829-?)\nPublisher: Nagel &amp; Weingaertner, N.Y.",
+    "date": "circa 1851date QS:P,+1851-00-00T00:00:00Z/9,P1480,Q5727902",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:G._W._Fasel_-_Charles_G._Crehen_-_Nagel_%26_Weingaertner_-_Martyrdom_of_Joseph_and_Hiram_Smith_in_Carthage_jail,_June_27th,_1844.jpg"
+  },
+  "ch03/gray287.png": {
+    "title": "File:Gray287.png",
+    "artist": "Henry Vandyke Carter",
+    "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Gray287.png"
+  },
+  "ch03/gray289.png": {
+    "title": "File:Gray289.png",
+    "artist": "Henry Vandyke Carter",
+    "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Gray289.png"
+  },
+  "ch03/gray290.png": {
+    "title": "File:Gray290.png",
+    "artist": "Henry Vandyke Carter",
+    "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Gray290.png"
+  },
+  "ch03/gray292.png": {
+    "title": "File:Gray292.png",
+    "artist": "Henry Vandyke Carter",
+    "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Gray292.png"
+  },
+  "ch04/kn_soap.jpg": {
+    "title": "Know nothing soap",
+    "artist": "Geo. A. Hill & Co., L.H. Bradford & Co.",
+    "date": "1854-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661571/",
+    "source": "loc:2008661571"
+  },
+  "ch04/kn_polka.jpg": {
+    "title": "Know Nothing Polka dedicated to everybody by nobody",
+    "artist": "Couenhaven, James.",
+    "date": "1854-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661569/",
+    "source": "loc:2008661569"
+  },
+  "ch04/propagation.jpg": {
+    "title": "The Propagation Society. More free than welcome",
+    "artist": "N. Currier (Firm)",
+    "date": "1855-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003656589/",
+    "source": "loc:2003656589"
+  },
+  "ch04/bridget.jpg": {
+    "title": "File:Irish potato famine Bridget O'Donnel.jpg",
+    "artist": "Illustrated London News, December 22, 1849",
+    "date": "1849-12-22",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Irish_potato_famine_Bridget_O%27Donnel.jpg"
+  },
+  "ch04/convent_ruins.jpg": {
+    "title": "File:Ruins of Ursuline Convent 1834 Riots.jpg",
+    "artist": "unidentified artist, historical print",
+    "date": "1834",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_Ursuline_Convent_1834_Riots.jpg"
+  },
+  "ch04/emigrant_ship.jpg": {
+    "title": "Quarter-deck of an emigrant ship - the roll call",
+    "artist": "",
+    "date": "1850-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003670834/",
+    "source": "loc:2003670834"
+  },
+  "ch04/five_points.jpg": {
+    "title": "File:Five Points - George Catlin - 1827.jpg",
+    "artist": "George Catlin",
+    "date": "1827date QS:P571,+1827-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Five_Points_-_George_Catlin_-_1827.jpg"
+  },
+  "ch04/monk_cover.jpg": {
+    "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 1)",
+    "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_38888/page/n1",
+    "source": "iabook:cihm_38888:1"
+  },
+  "ch04/monk_title.jpg": {
+    "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 3)",
+    "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_38888/page/n3",
+    "source": "iabook:cihm_38888:3"
+  },
+  "ch04/exposure.jpg": {
+    "title": "Awful exposure of the atrocious plot formed by certain individuals against the clergy and nuns of Lower Canada, through the intervention of Maria Monk [microform] : with an authentic narrative of her life, from her birth to the present moment, and an account of her impositions, etc (page 1)",
+    "artist": "Jones, J",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_27925/page/n1",
+    "source": "iabook:cihm_27925:1"
+  },
+  "ch04/citizen_kn.jpg": {
+    "title": "File:Citizen Know Nothing.jpg",
+    "artist": "Sarony &amp; Co., lithographer",
+    "date": "1854",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Citizen_Know_Nothing.jpg"
+  },
+  "ch04/irish_leaving.jpg": {
+    "title": "Irish emigrants leaving their home for America--the mail coach from Cahirciveen, County Kerry, Ireland",
+    "artist": "",
+    "date": "1866-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2001697359/",
+    "source": "loc:2001697359"
+  },
+  "ch04/emigrant_map.jpg": {
+    "title": "File:Emigrant's Map and Guide for Routes to North America WDL41.png",
+    "artist": "Zimmermann, Gotthelf",
+    "date": "1853date QS:P571,+1853-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Emigrant%27s_Map_and_Guide_for_Routes_to_North_America_WDL41.png"
+  },
+  "ch05/family_pledge.jpg": {
+    "title": "Temperance tabula and family pledge",
+    "artist": "",
+    "date": "1848-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003671478/",
+    "source": "loc:2003671478"
+  },
+  "ch05/member_cert.jpg": {
+    "title": "This is to certify that ... was duly elected a member of the above society on the ... day of ... 184-, and the pledge having been in due form administered to him he signed the same / Sinclair Lithr. Phila.",
+    "artist": "Sinclair, Thomas S., approximately 1805-1881, lithographer",
+    "date": "1841-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/97503997/",
+    "source": "loc:97503997"
+  },
+  "ch05/tree_intemperance.jpg": {
+    "title": "Tree of intemperance / [Archibald] Macbrairs, lith.",
+    "artist": "Macbrair, Archibald, lithographer",
+    "date": "1855-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003689279/",
+    "source": "loc:2003689279"
+  },
+  "ch05/county_election.jpg": {
+    "title": "File:George Caleb Bingham - The County Election - 44-2001 - Saint Louis Art Museum.jpg",
+    "artist": "George Caleb Bingham",
+    "date": "1852date QS:P571,+1852-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:George_Caleb_Bingham_-_The_County_Election_-_44-2001_-_Saint_Louis_Art_Museum.jpg"
+  },
+  "ch05/beecher.jpg": {
+    "title": "[Lyman Beecher, half-length portrait, facing front]",
+    "artist": "Brady, Mathew B., approximately 1823-1896.",
+    "date": "1845",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2004664099/",
+    "source": "loc:2004664099"
+  },
+  "img/ch05/lowell.jpg": {
+    "title": "View of Lowell, Massachusetts, 1840s",
+    "source": "https://www.loc.gov/item/94515606/",
+    "licence": "No known restrictions on publication."
+  },
+  "img/ch06/trenton.jpg": {
+    "title": "New Jersey State Lunatic Asylum, Trenton, engraving by J.J. Pease after J.X. Mason, 1840s-50s",
+    "source": "https://commons.wikimedia.org/wiki/File:New_Jersey_state_lunatic_asylum,_Trenton_-_Engraving.jpg",
+    "licence": "Public domain"
+  },
+  "ch07/mann.jpg": {
+    "title": "[Horace Mann, head-and-shoulders portrait, three-quarters to right]",
+    "artist": "Brady, Mathew B., approximately 1823-1896.",
+    "date": "1844-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2004664022/",
+    "source": "loc:2004664022"
+  },
+  "ch07/riot1844.jpg": {
+    "title": "Riot in Philadelphia, June [i.e. July] 7th 1844 / H. Bucholzer.",
+    "artist": "Bucholzer, H., artist",
+    "date": "1844-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003654121/",
+    "source": "loc:2003654121"
+  },
+  "img/ch07/country_school.jpg": {
+    "title": "Winslow_Homer_-_Country_School.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Country_School.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "ch07/nooning.jpg": {
+    "title": "[Farmers nooning, from the original picture in the possession of Jona. Sturges Esqr.] / Wm. S. Mount 1836.",
+    "artist": "Jones, Alfred, 1819-1900, engraver, Mount, William Sidney, 1807-1868, artist, Apollo Association for the Promotion of the Fine Arts in the United States, funder",
+    "date": "1843-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2011645778/",
+    "source": "loc:2011645778"
+  },
+  "img/ch08/sf_report.jpg": {
+    "title": "Report of the Woman's Rights Convention, held at Seneca Falls, N.Y., July 19th & 20th, 1848 (title page)",
+    "source": "https://www.loc.gov/item/2005683539/",
+    "licence": "Public domain by age (published 1848); LOC rights not evaluated"
+  },
+  "img/ch08/declaration.jpg": {
+    "title": "Declaration of Independence, 1823 William J. Stone facsimile",
+    "source": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
+    "licence": "Public domain"
+  },
+  "img/ch08/douglass.jpg": {
+    "title": "Samuel_J._Miller_-_Frederick_Douglass_-_Google_Art_Project.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Samuel_J._Miller_-_Frederick_Douglass_-_Google_Art_Project.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "img/ch08/stanton.jpg": {
+    "title": "Elizabeth Cady Stanton, 1848 (daguerreotype)",
+    "source": "https://commons.wikimedia.org/wiki/File:ElizabethCadyStanton-1848-Daniel-Henry.jpg",
+    "licence": "Public domain"
+  },
+  "ch09/shakers.jpg": {
+    "title": "Shakers near Lebanon state of N. York, their mode of worship",
+    "artist": "",
+    "date": "1830-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/00650589/",
+    "source": "loc:00650589"
+  },
+  "ch09/walden_title.jpg": {
+    "title": "[Title page of Henry D. Thoreau, Walden; or life in the woods, 1854, showing Thoreau's hut at Walden Pond, Massachusetts]",
+    "artist": "",
+    "date": "1854-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/96517797/",
+    "source": "loc:96517797"
+  },
+  "ch09/king.jpg": {
+    "title": "[Martin Luther King speaks at a press conference at the U.S. Capitol about the Senate debate on the Civil Rights Act of 1964]",
+    "artist": "Trikosko, Marion S., photographer",
+    "date": "1964-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2016646516/",
+    "source": "loc:2016646516"
+  },
+  "img/ch09/thoreau.jpg": {
+    "title": "Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "img/ch09/gandhi.jpg": {
+    "title": "Mahatma-Gandhi,_studio,_1931.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "img/ch09/noyes.jpg": {
+    "title": "John_Humphrey_Noyes.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:John_Humphrey_Noyes.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "img/ch09/concord_1852.jpg": {
+    "title": "Map of the town of Concord, Middlesex County, Mass., 1852 (H. F. Walling)",
+    "source": "https://www.loc.gov/item/2012593522/",
+    "licence": "Library of Congress, Geography and Map Division: free to use and reuse"
+  },
+  "ch09/emerson.jpg": {
+    "title": "Ralph Waldo Emerson, 1803-1882",
+    "artist": "",
+    "date": "1906-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003670025/",
+    "source": "loc:2003670025"
+  },
+  "ch09/oneida.jpg": {
+    "title": "Oneida Community",
+    "artist": "",
+    "date": "1860-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2017660482/",
+    "source": "loc:2017660482"
+  },
+  "ch10/garrison_1835.jpg": {
+    "title": "[William Lloyd Garrison, 1805-1879, bust portrait, facing left]",
+    "artist": "",
+    "date": "1835-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2006680044/",
+    "source": "loc:2006680044"
+  },
+  "ch10/turner_confessions.jpg": {
+    "title": "Title page, with no illus., in Nat Turner, The confessions, Richmond, Thomas R. Gray, 1832",
+    "artist": "",
+    "date": "1832-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2005692027/",
+    "source": "loc:2005692027"
+  },
+  "img/ch10/liberator_p1.jpg": {
+    "title": "The_Liberator,_Issue_No.1,_1831.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Liberator,_Issue_No.1,_1831.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  },
+  "img/ch10/liberia_map.jpg": {
+    "title": "Map_of_Liberia_LOC_96684985.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Map_of_Liberia_LOC_96684985.jpg",
+    "licence": "Public domain (Wikimedia Commons)"
+  }
 }
