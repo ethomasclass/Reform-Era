@@ -41,6 +41,27 @@ const Clock: React.FC<{cx: number; cy: number; r: number; at: number}> = ({cx, c
   );
 };
 
+/** The "15 Minute History" wordmark, animating in from the given frames (also used, fully drawn, on the thumbnail). */
+export const Wordmark: React.FC<{clockAt: number; numAt: number; minAt: number; hisAt: number}> = ({clockAt, numAt, minAt, hisAt}) => {
+  const g = useGFrame();
+  const pal = usePal();
+  return (
+    <>
+      <Clock cx={440} cy={540} r={250} at={clockAt} />
+      {g >= numAt && (
+        <div style={{position: 'absolute', left: 440 - 200, top: 540 - 150, width: 400, textAlign: 'center', fontFamily: JF.display, fontSize: 250, lineHeight: 1,
+          color: '#f4efe6', textShadow: '0 6px 24px rgba(0,0,0,0.7)', transform: `scale(${interpolate(g, [numAt, numAt + 3, numAt + 6], [1.35, 0.95, 1], clamp)})`}}>15</div>
+      )}
+      {g >= minAt && <Highlight text="MINUTE" x={760} y={350} size={128} at={minAt} seed={7} rot={-2} />}
+      {g >= hisAt && (
+        <div style={{position: 'absolute', left: 770, top: 520, fontFamily: JF.display, fontSize: 196, lineHeight: 1, color: pal.mark, textShadow: '0 6px 26px rgba(0,0,0,0.7)',
+          transform: `scale(${interpolate(g, [hisAt, hisAt + 3, hisAt + 6], [1.3, 0.97, 1], clamp)})`, transformOrigin: 'left center'}}>HISTORY</div>
+      )}
+      {g >= hisAt + 6 && <div style={{position: 'absolute', left: 780, top: 760, width: interpolate(g, [hisAt + 6, hisAt + 16], [0, 820], clamp), height: 8, background: boxOf(pal)}} />}
+    </>
+  );
+};
+
 const Body: React.FC = () => {
   const frame = useCurrentFrame();
   const g = useGFrame();
@@ -72,17 +93,7 @@ const Body: React.FC = () => {
       })}
       {/* the wordmark */}
       <AbsoluteFill style={{transform: `scale(${push})`}}>
-        <Clock cx={440} cy={540} r={250} at={clockAt} />
-        {g >= numAt && (
-          <div style={{position: 'absolute', left: 440 - 200, top: 540 - 150, width: 400, textAlign: 'center', fontFamily: JF.display, fontSize: 250, lineHeight: 1,
-            color: '#f4efe6', textShadow: '0 6px 24px rgba(0,0,0,0.7)', transform: `scale(${interpolate(g, [numAt, numAt + 3, numAt + 6], [1.35, 0.95, 1], clamp)})`}}>15</div>
-        )}
-        {g >= minAt && <Highlight text="MINUTE" x={760} y={350} size={128} at={minAt} seed={7} rot={-2} />}
-        {g >= hisAt && (
-          <div style={{position: 'absolute', left: 770, top: 520, fontFamily: JF.display, fontSize: 196, lineHeight: 1, color: pal.mark, textShadow: '0 6px 26px rgba(0,0,0,0.7)',
-            transform: `scale(${interpolate(g, [hisAt, hisAt + 3, hisAt + 6], [1.3, 0.97, 1], clamp)})`, transformOrigin: 'left center'}}>HISTORY</div>
-        )}
-        {g >= hisAt + 6 && <div style={{position: 'absolute', left: 780, top: 760, width: interpolate(g, [hisAt + 6, hisAt + 16], [0, 820], clamp), height: 8, background: boxOf(pal)}} />}
+        <Wordmark clockAt={clockAt} numAt={numAt} minAt={minAt} hisAt={hisAt} />
       </AbsoluteFill>
       <Finish vignette={0.45} />
       {CARDS.map((_, i) => <Sfx key={i} at={i * 6} src="sfx/tick.wav" volume={0.45} />)}
