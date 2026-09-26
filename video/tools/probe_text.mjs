@@ -15,7 +15,7 @@ for (const id of ids) {
   const composition = await selectComposition({serveUrl, id, browserExecutable, inputProps});
   const outputDir = path.resolve('out/probe_frames');
   fs.mkdirSync(outputDir, {recursive: true});
-  await renderFrames({composition, serveUrl, inputProps, browserExecutable, outputDir, imageFormat: 'none', everyNthFrame: nth, concurrency: 2, timeoutInMilliseconds: 180000,
+  await renderFrames({composition, serveUrl, inputProps, browserExecutable, outputDir, imageFormat: 'none', everyNthFrame: nth, frameRange: process.env.FRAMES ? process.env.FRAMES.split('-').map(Number) : null, concurrency: 2, timeoutInMilliseconds: 180000,
     onStart: () => {}, onFrameUpdate: () => {},
     onBrowserLog: (log) => { if (log.text.startsWith('PROBECOUNT ')) counts[id] = (counts[id] || 0) + Number(log.text.slice(11)); else if (log.text.startsWith('PROBE ')) hits.push({id, ...JSON.parse(log.text.slice(6))}); }});
   console.log('checked', id, Math.ceil(composition.durationInFrames / nth), 'sampled frames,', counts[id] || 0, 'text boxes measured');
