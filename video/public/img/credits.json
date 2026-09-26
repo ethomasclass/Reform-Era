@@ -319,5 +319,104 @@
     "date": "before 1858date QS:P,+1858-00-00T00:00:00Z/7,P1326,+1858-00-00T00:00:00Z/9",
     "licence": "Public domain",
     "page": "https://commons.wikimedia.org/wiki/File:Gray292.png"
+  },
+  "ch04/kn_soap.jpg": {
+    "title": "Know nothing soap",
+    "artist": "Geo. A. Hill & Co., L.H. Bradford & Co.",
+    "date": "1854-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661571/",
+    "source": "loc:2008661571"
+  },
+  "ch04/kn_polka.jpg": {
+    "title": "Know Nothing Polka dedicated to everybody by nobody",
+    "artist": "Couenhaven, James.",
+    "date": "1854-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2008661569/",
+    "source": "loc:2008661569"
+  },
+  "ch04/propagation.jpg": {
+    "title": "The Propagation Society. More free than welcome",
+    "artist": "N. Currier (Firm)",
+    "date": "1855-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003656589/",
+    "source": "loc:2003656589"
+  },
+  "ch04/bridget.jpg": {
+    "title": "File:Irish potato famine Bridget O'Donnel.jpg",
+    "artist": "Illustrated London News, December 22, 1849",
+    "date": "1849-12-22",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Irish_potato_famine_Bridget_O%27Donnel.jpg"
+  },
+  "ch04/convent_ruins.jpg": {
+    "title": "File:Ruins of Ursuline Convent 1834 Riots.jpg",
+    "artist": "unidentified artist, historical print",
+    "date": "1834",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_Ursuline_Convent_1834_Riots.jpg"
+  },
+  "ch04/emigrant_ship.jpg": {
+    "title": "Quarter-deck of an emigrant ship - the roll call",
+    "artist": "",
+    "date": "1850-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2003670834/",
+    "source": "loc:2003670834"
+  },
+  "ch04/five_points.jpg": {
+    "title": "File:Five Points - George Catlin - 1827.jpg",
+    "artist": "George Catlin",
+    "date": "1827date QS:P571,+1827-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Five_Points_-_George_Catlin_-_1827.jpg"
+  },
+  "ch04/monk_cover.jpg": {
+    "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 1)",
+    "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_38888/page/n1",
+    "source": "iabook:cihm_38888:1"
+  },
+  "ch04/monk_title.jpg": {
+    "title": "Awful disclosures of Maria Monk, as exhibited in a narrative of her sufferings during a residence of five years as a novice, and two years as a black nun, in the Hotel Dieu nunnery at Montreal [microform] : with additional information : to which is added, The nun, or, Six months' residence in a convent (page 3)",
+    "artist": "['Monk, Maria, d. ca. 1850', \"Reed, Rebecca Theresa. The nun, or, Six months' residence in a convent\"]",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_38888/page/n3",
+    "source": "iabook:cihm_38888:3"
+  },
+  "ch04/exposure.jpg": {
+    "title": "Awful exposure of the atrocious plot formed by certain individuals against the clergy and nuns of Lower Canada, through the intervention of Maria Monk [microform] : with an authentic narrative of her life, from her birth to the present moment, and an account of her impositions, etc (page 1)",
+    "artist": "Jones, J",
+    "date": "1836",
+    "licence": "public domain by age (1836)",
+    "page": "https://archive.org/details/cihm_27925/page/n1",
+    "source": "iabook:cihm_27925:1"
+  },
+  "ch04/citizen_kn.jpg": {
+    "title": "File:Citizen Know Nothing.jpg",
+    "artist": "Sarony &amp; Co., lithographer",
+    "date": "1854",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Citizen_Know_Nothing.jpg"
+  },
+  "ch04/irish_leaving.jpg": {
+    "title": "Irish emigrants leaving their home for America--the mail coach from Cahirciveen, County Kerry, Ireland",
+    "artist": "",
+    "date": "1866-01-01",
+    "licence": "No known restrictions on publication.",
+    "page": "https://www.loc.gov/item/2001697359/",
+    "source": "loc:2001697359"
+  },
+  "ch04/emigrant_map.jpg": {
+    "title": "File:Emigrant's Map and Guide for Routes to North America WDL41.png",
+    "artist": "Zimmermann, Gotthelf",
+    "date": "1853date QS:P571,+1853-00-00T00:00:00Z/9",
+    "licence": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Emigrant%27s_Map_and_Guide_for_Routes_to_North_America_WDL41.png"
   }
 }

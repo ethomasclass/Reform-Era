@@ -13,6 +13,7 @@ import {Ch01, CH01_FRAMES} from './ch/Ch01';
 import {Ch02, CH02_FRAMES} from './ch/Ch02';
 import {ChannelIntro, INTRO_FRAMES} from './ch/Intro';
 import {Ch03, CH03_FRAMES} from './ch/Ch03';
+import {Ch04, CH04_FRAMES} from './ch/Ch04';
 
 const SLATE = 75;
 
@@ -59,6 +60,7 @@ export const Root: React.FC = () => (
   <>
     <Composition id="Ch01" width={W} height={H} fps={FPS} durationInFrames={CH01_FRAMES} component={() => <JFonts><Ch01 /></JFonts>} />
     <Composition id="Ch03" width={W} height={H} fps={FPS} durationInFrames={CH03_FRAMES} component={() => <JFonts><Ch03 /></JFonts>} />
+    <Composition id="Ch04" width={W} height={H} fps={FPS} durationInFrames={CH04_FRAMES} component={() => <JFonts><Ch04 /></JFonts>} />
     <Composition id="Intro" width={W} height={H} fps={FPS} durationInFrames={INTRO_FRAMES} component={() => <JFonts><ChannelIntro /></JFonts>} />
     <Composition id="Ch02" width={W} height={H} fps={FPS} durationInFrames={CH02_FRAMES} component={() => <JFonts><Ch02 /></JFonts>} />
     {Object.keys(HANDS).flatMap((h) => [['Ch01', Ch01, CH01_FRAMES], ['Ch02', Ch02, CH02_FRAMES]].map(([n, C, fr]) => {

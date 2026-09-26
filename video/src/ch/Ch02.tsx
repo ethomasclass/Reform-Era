@@ -64,6 +64,52 @@ const Camp1819: React.FC<{t: TL; from: number; days?: boolean}> = ({t, from, day
   );
 };
 
+/** "Picture a field in upstate New York": the camp meeting at night (Gemini illustration). */
+const RevivalNight: React.FC<{t: TL}> = ({t}) => {
+  const frame = useCurrentFrame();
+  const g = useGFrame();
+  const size: [number, number] = [1376, 768];
+  const sc = (1920 / 1376) * interpolate(frame, [0, t.at('People crying')], [1.04, 1.16], clamp);
+  const place: Place = {left: Math.min(0, Math.max(1920 - 1376 * sc, 960 - 520 * sc)), top: Math.min(0, Math.max(1080 - 768 * sc, 540 - 380 * sc)), scale: sc};
+  return (
+    <AbsoluteFill style={{background: INK, overflow: 'hidden'}}>
+      <Picture src="img/gen/ch02_revival_night.jpg" place={place} size={size} bw="grayscale(1) contrast(1.3) brightness(0.95)" />
+      <ColourReveal src="img/gen/ch02_revival_night.jpg" place={place} size={size} from={0.45} to={0.85} filter="saturate(1.1)" />
+      {g >= t.at('upstate') && <Highlight text="UPSTATE NEW YORK" x={110} y={100} size={84} at={t.at('upstate')} seed={71} />}
+      <Note text="thousands of people" x={140} y={230} size={62} rot={-4} at={t.at('Thousands')} />
+      <Note text="packed under tents" x={200} y={320} size={58} rot={-3} at={t.at('tents') - 2} />
+      <Tag text="Illustration · a camp meeting at night, upstate New York" />
+    </AbsoluteFill>
+  );
+};
+
+/** The anxious bench (Gemini illustration). */
+const BenchScene: React.FC<{t: TL}> = ({t}) => {
+  const frame = useCurrentFrame();
+  const g = useGFrame();
+  const size: [number, number] = [1376, 768];
+  const s0 = t.at('And he sold');
+  const sc = (1920 / 1376) * interpolate(frame, [s0, t.at('The region')], [1.02, 1.1], clamp);
+  const place: Place = {left: Math.min(0, Math.max(1920 - 1376 * sc, 960 - 560 * sc)), top: Math.min(0, Math.max(1080 - 768 * sc, 540 - 470 * sc)), scale: sc};
+  const bx = place.left + 420 * sc;
+  const by = place.top + 480 * sc;
+  return (
+    <AbsoluteFill style={{background: INK, overflow: 'hidden'}}>
+      <Picture src="img/gen/ch02_anxious_bench.jpg" place={place} size={size} bw="grayscale(1) contrast(1.25) brightness(1.02)" />
+      <ColourReveal src="img/gen/ch02_anxious_bench.jpg" place={place} size={size} from={0.62} to={0.95} />
+      <Loop cx={bx} cy={by} rx={400 * sc} ry={125 * sc} tilt={-2} at={t.at('anxious') + 2} dur={12} width={6} seed={145} />
+      {g >= t.at('anxious') && <Highlight text="THE ANXIOUS BENCH" x={90} y={90} size={80} at={t.at('anxious')} seed={141} />}
+      <Note text="sinners sit up front..." x={110} y={215} size={50} rot={-3} at={t.at('wrestling')} />
+      <Note text="...while everyone prays over them" x={140} y={295} size={50} rot={-3} at={t.at('prayed') - 4} />
+      <Note text="he sold it like a pro" x={100} y={960} size={48} rot={-3} at={s0 + 4} out={t.at('anxious')} />
+      {[['CHURCH SERVICE', 'part church'], ['CONCERT', 'concert'], ['REALITY SHOW', 'reality']].map(([txt, cue], i) =>
+        g >= t.at(cue) ? <Highlight key={txt} text={txt} x={1060 + (i === 2 ? 40 : 0)} y={110 + i * 120} size={76} at={t.at(cue)} seed={150 + i} rot={i === 1 ? 2 : -2} /> : null,
+      )}
+      <Tag text="Illustration · a revival meeting, western New York, c. 1831" />
+    </AbsoluteFill>
+  );
+};
+
 /** Punch-ins on the 1829 camp meeting: crying, shouting, falling. */
 const PunchIns: React.FC<{t: TL}> = ({t}) => {
   const frame = useCurrentFrame();
@@ -397,15 +443,14 @@ const Body: React.FC = () => {
   const t = makeTimeline(N, 30);
   const at = t.at;
   const cuts: [number, React.ReactNode][] = [
-    [0, <Upstate t={t} />],
-    [at('Thousands') - 1, <Camp1819 t={t} from={at('Thousands')} />],
+    [0, <RevivalNight t={t} />],
     [at('People crying') - 1, <PunchIns t={t} />],
     [at('Some') - 1, <Camp1819 t={t} from={at('Some')} days />],
     [at('This is') - 1, <Awakening t={t} />],
     [at('And its') - 1, <FinneyIntro t={t} />],
     [at('The older') - 1, <Puritans t={t} />],
     [at('Basically') - 1, <Diagram t={t} />],
-    [at('And he sold') - 1, <Bench t={t} />],
+    [at('And he sold') - 1, <BenchScene t={t} />],
     [at('The region') - 1, <District t={t} />],
     [at("But here's") - 1, <Chain t={t} />],
     [at("That's the") - 1, <Spark t={t} />],
