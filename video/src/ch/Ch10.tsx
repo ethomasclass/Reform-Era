@@ -80,8 +80,8 @@ const Callback: React.FC<{t: TL}> = ({t}) => {
       <AbsoluteFill style={{background: 'rgba(8,6,4,0.45)'}} />
       <div style={{position: 'absolute', left: 150, top: 110, width: 540, transform: `scale(${push}) rotate(-3deg)`, transformOrigin: '50% 40%'}}>
         <Img src={staticFile('img/prep/walker_torn.png')} style={{width: 560, filter: 'drop-shadow(0 26px 34px rgba(0,0,0,0.7))'}} />
-        <div style={{position: 'absolute', left: 110, top: 26, width: 340, height: 66, background: INK, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: JF.display, fontSize: 46, color: boxOf(pal),
-          transform: `translate(${lift * 260}px, ${-lift * 340}px) rotate(${lift * 24}deg)`, opacity: 1 - lift}}>? ? ?</div>
+        {lift < 0.6 && <div style={{position: 'absolute', left: 110, top: 26, width: 340, height: 66, background: INK, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: JF.display, fontSize: 46, color: boxOf(pal),
+          transform: `translate(${lift * 200}px, ${-lift * 150}px) rotate(${lift * 20}deg)`, opacity: 1 - lift / 0.6}}>? ? ?</div>}
       </div>
       <Note text="that pamphlet in Savannah..." x={820} y={220} size={60} rot={-3} at={t.at('pamphlet')} />
       <Note text="the biggest reform fight of all:" x={840} y={340} size={54} rot={-3} at={t.at('biggest')} color={CREAM} />

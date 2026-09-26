@@ -183,7 +183,8 @@ export const MapScene: React.FC<{n?: Narration; withAudio?: boolean}> = ({n = N,
       <Pin x={sv[0]} y={sv[1]} at={at('Savannah')} />
       <Pin x={b[0]} y={b[1]} at={at('Boston')} />
       {g >= at('Savannah') && <Highlight text="SAVANNAH" x={sv[0] - 150} y={sv[1] + 30} size={60} at={at('Savannah')} seed={9} />}
-      {g >= at('Boston') && <Highlight text="BOSTON" x={b[0] + 30} y={b[1] - 60} size={60} at={at('Boston')} seed={7} />}
+      {/* the label flips to the dot's left near the right edge, and leaves with the dot rather than being cut */}
+      {g >= at('Boston') && b[0] < 1900 && <Highlight text="BOSTON" x={b[0] + 30 + 250 > 1880 ? b[0] - 30 - 250 : b[0] + 30} y={b[1] - 60} size={60} at={at('Boston')} seed={7} />}
       {g < dateOut && <Highlight text="DECEMBER 1829" x={70} y={60} size={70} at={at('December')} seed={11} />}
 
       {/* the pamphlet */}

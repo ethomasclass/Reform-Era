@@ -27,10 +27,13 @@ const Pin: React.FC<{p: number[]; at: number; label?: string; dx?: number; dy?: 
   const hand = useHand();
   if (g < at) return null;
   const k = interpolate(g, [at, at + 3, at + 6], [0, 1.35, 1], clamp);
+  // Labels flip to the pin's left near the right edge and leave with the pin instead of being cut off.
+  const w = (label ?? '').length * 40 * hand.scale * 0.45;
+  const onScreen = p[0] > 20 && p[0] < 1900 && p[1] > 20 && p[1] < 1060;
   return (
     <>
       <div style={{position: 'absolute', left: p[0] - 12, top: p[1] - 12, width: 24, height: 24, borderRadius: '50%', background: pal.mark, border: `4px solid ${INK}`, transform: `scale(${k})`}} />
-      {label && <div style={{position: 'absolute', left: p[0] + dx, top: p[1] + dy, fontFamily: hand.family, fontSize: 40 * hand.scale, color: pal.mark, whiteSpace: 'nowrap',
+      {label && onScreen && <div style={{position: 'absolute', left: p[0] + dx + w > 1880 ? p[0] - 16 - w : p[0] + dx, top: p[1] + dy, fontFamily: hand.family, fontSize: 40 * hand.scale, color: pal.mark, whiteSpace: 'nowrap',
         textShadow: '0 0 2px #111, 0 0 4px #111, 2px 2px 0 #111, -2px -2px 0 #111'}}>{label}</div>}
     </>
   );
