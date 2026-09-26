@@ -2,7 +2,7 @@
 // in colour, loose yellow outlines traced around subjects, torn yellow highlighter titles, grids,
 // halos, route lines and handwritten notes.
 import React, {useEffect, useState} from 'react';
-import {AbsoluteFill, continueRender, delayRender, Img, interpolate, random, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, continueRender, delayRender, getInputProps, Img, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import '@fontsource/abril-fatface/latin-400.css';
 import '@fontsource/permanent-marker/latin-400.css';
 import '@fontsource/caveat-brush/latin-400.css';
@@ -86,7 +86,33 @@ export const JFonts: React.FC<{children: React.ReactNode}> = ({children}) => {
   useEffect(() => {
     Promise.all(FACES.map((f) => document.fonts.load(f))).then(() => continueRender(h));
   }, [h]);
-  return <>{children}</>;
+  return <>{children}{getInputProps().probe ? <TextProbe /> : null}</>;
+};
+
+/** Render-time check (tools/probe_text.mjs): logs every piece of text whose box crosses the frame edge. */
+const TextProbe: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {width, height} = useVideoConfig();
+  useEffect(() => {
+    const h = delayRender('text-probe');
+    document.fonts.ready.then(() => requestAnimationFrame(() => {
+      const out: string[] = [];
+      let n = 0;
+      document.querySelectorAll('body *').forEach((el) => {
+        const own = Array.from(el.childNodes).filter((n) => n.nodeType === 3 && n.textContent!.trim()).map((n) => n.textContent!.trim()).join(' ');
+        if (!own) return;
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        n++;
+        const over = Math.max(-r.left, -r.top, r.right - width, r.bottom - height);
+        if (over > 0) out.push(JSON.stringify({f: frame, over: Math.round(over), l: Math.round(r.left), t: Math.round(r.top), r: Math.round(r.right), b: Math.round(r.bottom), text: own.slice(0, 70)}));
+      });
+      out.forEach((o) => console.log('PROBE ' + o));
+      console.log('PROBECOUNT ' + n);
+      continueRender(h);
+    }));
+  }, [frame, width, height]);
+  return null;
 };
 
 export type MaskData = {size: [number, number]; shapes: Record<string, string[]>; boxes: Record<string, [number, number, number, number]>};

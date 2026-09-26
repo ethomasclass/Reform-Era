@@ -35,7 +35,7 @@ PRONOUNCE = {"1829": "eighteen twenty-nine", "1830": "eighteen thirty", "1830s":
              "1850s": "eighteen-fifties", "1851": "eighteen fifty-one", "1860": "eighteen sixty",
              "1879": "eighteen seventy-nine", "1888": "eighteen eighty-eight", "1920": "nineteen twenty",
              "2025": "twenty twenty-five", "6,000": "six thousand",
-             "Hydesville": "Hides-ville", "Noyes": "Noise", "Oneida": "Oh-nye-da", "coverture": "cuv-er-cher"}
+             "Hydesville": "Hides-ville", "Noyes": "Noise", "Oneida": "Oh-nigh-duh", "coverture": "kuh-ver-cher"}
 DOLLARS = {"1,000": "one thousand", "5,000": "five thousand", "10,000": "ten thousand"}
 
 
