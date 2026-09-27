@@ -3,7 +3,7 @@
 ## Title (under 70 characters)
 
 ```
-Why America Tried to Fix Everything | The Reform Era Explained (1830s–1840s)
+Why America Tried to Fix Everything | The Reform Era Explained
 ```
 
 ## Description (paste everything inside the box)
