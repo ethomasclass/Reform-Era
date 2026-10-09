@@ -15,6 +15,9 @@ import {ChannelIntro, INTRO_FRAMES} from './ch/Intro';
 import {Ch03, CH03_FRAMES} from './ch/Ch03';
 import {Ch04, CH04_FRAMES} from './ch/Ch04';
 import {Ch05, CH05_FRAMES} from './ch/Ch05';
+import {SH, SW} from './shorts/Short';
+import {SHORT_FOX_FRAMES, ShortFox} from './shorts/ShortFox';
+import {SHORT_TEMPERANCE_FRAMES, ShortTemperance} from './shorts/ShortTemperance';
 import {Ch06, CH06_FRAMES} from './ch/Ch06';
 import {Ch07, CH07_FRAMES} from './ch/Ch07';
 import {Ch08, CH08_FRAMES} from './ch/Ch08';
@@ -70,6 +73,8 @@ export const Root: React.FC = () => (
     <Composition id="Ch03" width={W} height={H} fps={FPS} durationInFrames={CH03_FRAMES} component={() => <JFonts><Ch03 /></JFonts>} />
     <Composition id="Ch04" width={W} height={H} fps={FPS} durationInFrames={CH04_FRAMES} component={() => <JFonts><Ch04 /></JFonts>} />
     <Composition id="Ch05" width={W} height={H} fps={FPS} durationInFrames={CH05_FRAMES} component={() => <JFonts><Ch05 /></JFonts>} />
+    <Composition id="Short-Fox" width={SW} height={SH} fps={FPS} durationInFrames={SHORT_FOX_FRAMES} component={() => <JFonts><ShortFox /></JFonts>} />
+    <Composition id="Short-Temperance" width={SW} height={SH} fps={FPS} durationInFrames={SHORT_TEMPERANCE_FRAMES} component={() => <JFonts><ShortTemperance /></JFonts>} />
     <Composition id="Ch06" width={W} height={H} fps={FPS} durationInFrames={CH06_FRAMES} component={() => <JFonts><Ch06 /></JFonts>} />
     <Composition id="Ch07" width={W} height={H} fps={FPS} durationInFrames={CH07_FRAMES} component={() => <JFonts><Ch07 /></JFonts>} />
     <Composition id="Ch08" width={W} height={H} fps={FPS} durationInFrames={CH08_FRAMES} component={() => <JFonts><Ch08 /></JFonts>} />
